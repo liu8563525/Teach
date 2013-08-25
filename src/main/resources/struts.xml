@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+    <!-- <constant name="struts.convention.action.packages" value="gduf.liu.auth.login" /> -->
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.multipart.maxSize" value="100000000"/> <!-- 限制为10M -->
+
+	<!-- global -->
+	<!-- <include file="gduf/liu/auth/interceptor/Interceptor.xml" />
+	<include file="gduf/liu/auth/login/LoginAction.xml" /> -->
+
+	<!-- local -->
+	<!-- <include file="gduf/liu/teach/action/AdminMngAction.xml" />
+	<include file="gduf/liu/teach/action/TeaMngAction.xml" />
+	<include file="gduf/liu/teach/action/AnnexMngAction.xml" />
+	<include file="gduf/liu/teach/action/StuMngAction.xml" />
+	<include file="gduf/liu/teach/action/NoticeMngAction.xml" /> -->
+
+</struts>

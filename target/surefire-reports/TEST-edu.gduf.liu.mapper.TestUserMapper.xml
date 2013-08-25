@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="2.994" errors="1" skipped="0" tests="1" name="edu.gduf.liu.mapper.TestUserMapper">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_20\jre\bin"/>
+    <property name="java.vm.version" value="16.3-b01"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\kevin\cbx5\workspace\Teach"/>
+    <property name="java.runtime.version" value="1.6.0_20-b02"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_20\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\kevin.liu\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\kevin\cbx5\workspace\.metadata\.plugins\org.maven.ide.eclipse\launches\m2conf5539756489643268717.tmp"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_20\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.6.0_20/bin/../jre/bin/server;C:/Program Files/Java/jdk1.6.0_20/bin/../jre/bin;C:/Program Files/Java/jdk1.6.0_20/bin/../jre/lib/amd64;C:\oracle\product\10.2.0\client_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\WinMerge;C:\Program Files\Java\jdk1.6.0_20\bin;C:\kevin\ant\apache-ant-1.8.1\bin;C:\kevin\apache-maven-3.1.0\bin;;C:\kevin\IDE\eclipse;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Server Compiler"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\kevin.liu"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="file.encoding" value="GBK"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="user.name" value="kevin.liu"/>
+    <property name="java.class.path" value="C:\kevin\apache-maven-3.1.0\boot\plexus-classworlds-2.4.2.jar"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_20\jre"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_20"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_20\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.6.0_20\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_20\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_20\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_20\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_20\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_20\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_20\jre\classes"/>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="maven.home" value="C:\kevin\apache-maven-3.1.0"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="2.994" classname="edu.gduf.liu.mapper.TestUserMapper" name="testCountAll">
+    <error message="Invalid bound statement (not found): edu.gduf.liu.mapper.UserMapper.countAll" type="org.apache.ibatis.binding.BindingException">org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): edu.gduf.liu.mapper.UserMapper.countAll
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.&lt;init&gt;(MapperMethod.java:178)
+	at org.apache.ibatis.binding.MapperMethod.&lt;init&gt;(MapperMethod.java:38)
+	at org.apache.ibatis.binding.MapperProxy.cachedMapperMethod(MapperProxy.java:49)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:42)
+	at $Proxy14.countAll(Unknown Source)
+	at edu.gduf.liu.mapper.TestUserMapper.testCountAll(TestUserMapper.java:13)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: java.lang.IllegalArgumentException: Mapped Statements collection does not contain value for edu.gduf.liu.mapper.UserMapper.countAll
+	at org.apache.ibatis.session.Configuration$StrictMap.get(Configuration.java:775)
+	at org.apache.ibatis.session.Configuration.getMappedStatement(Configuration.java:615)
+	at org.apache.ibatis.session.Configuration.getMappedStatement(Configuration.java:608)
+	at org.apache.ibatis.binding.MapperMethod$SqlCommand.&lt;init&gt;(MapperMethod.java:176)
+	... 34 more
+</error>
+    <system-out>16:25:54,622 DEBUG StandardEnvironment:112 - Initializing new StandardEnvironment
+16:25:54,629 DEBUG StandardEnvironment:107 - Adding [systemProperties] PropertySource with lowest search precedence
+16:25:54,632 DEBUG StandardEnvironment:107 - Adding [systemEnvironment] PropertySource with lowest search precedence
+16:25:54,632 DEBUG StandardEnvironment:116 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+16:25:54,637  INFO FileSystemXmlApplicationContext:510 - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@575fadcf: startup date [Mon Jul 29 16:25:54 CST 2013]; root of context hierarchy
+16:25:54,680 DEBUG StandardEnvironment:112 - Initializing new StandardEnvironment
+16:25:54,681 DEBUG StandardEnvironment:107 - Adding [systemProperties] PropertySource with lowest search precedence
+16:25:54,681 DEBUG StandardEnvironment:107 - Adding [systemEnvironment] PropertySource with lowest search precedence
+16:25:54,681 DEBUG StandardEnvironment:116 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+16:25:54,692  INFO XmlBeanDefinitionReader:315 - Loading XML bean definitions from file [C:\kevin\cbx5\workspace\Teach\src\main\webapp\WEB-INF\spring-servlet.xml]
+16:25:54,707 DEBUG DefaultDocumentLoader:72 - Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+16:25:54,737 DEBUG PluggableSchemaResolver:140 - Loading schema mappings from [META-INF/spring.schemas]
+16:25:54,745 DEBUG PluggableSchemaResolver:146 - Loaded schema mappings: {http://mybatis.org/schema/mybatis-spring-1.2.xsd=org/mybatis/spring/config/mybatis-spring-1.2.xsd, http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-3.2.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd=org/springframework/web/servlet/config/spring-mvc-3.1.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.1.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/task/spring-task-3.1.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-3.1.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-3.1.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-3.2.xsd=org/springframework/transaction/config/spring-tx-3.2.xsd, http://www.springframework.org/schema/context/spring-context-3.2.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/util/spring-util-3.2.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/lang/spring-lang-3.2.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd=org/springframework/web/servlet/config/spring-mvc-3.0.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/cache/spring-cache-3.2.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://mybatis.org/schema/mybatis-spring.xsd=org/mybatis/spring/config/mybatis-spring-1.2.xsd, http://www.springframework.org/schema/tx/spring-tx-2.5.xsd=org/springframework/transaction/config/spring-tx-2.5.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx.xsd=org/springframework/transaction/config/spring-tx-3.2.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/aop/spring-aop-3.2.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.1.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/context/spring-context-3.1.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.1.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.1.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache-3.1.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/mvc/spring-mvc.xsd=org/springframework/web/servlet/config/spring-mvc-3.2.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc.xsd=org/springframework/jdbc/config/spring-jdbc-3.2.xsd, http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd=org/springframework/web/servlet/config/spring-mvc-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.2.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/tx/spring-tx-2.0.xsd=org/springframework/transaction/config/spring-tx-2.0.xsd, http://www.springframework.org/schema/aop/spring-aop-3.1.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/task/spring-task-3.2.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/tx/spring-tx-3.0.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd=org/springframework/jdbc/config/spring-jdbc-3.2.xsd, http://www.springframework.org/schema/tool/spring-tool-3.2.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd}
+16:25:54,750 DEBUG PluggableSchemaResolver:118 - Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.0.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.0.xsd
+16:25:54,836 DEBUG PluggableSchemaResolver:118 - Found XML schema [http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd] in classpath: org/springframework/web/servlet/config/spring-mvc-3.0.xsd
+16:25:54,857 DEBUG PluggableSchemaResolver:118 - Found XML schema [http://www.springframework.org/schema/tool/spring-tool-3.0.xsd] in classpath: org/springframework/beans/factory/xml/spring-tool-3.0.xsd
+16:25:54,865 DEBUG PluggableSchemaResolver:118 - Found XML schema [http://www.springframework.org/schema/context/spring-context.xsd] in classpath: org/springframework/context/config/spring-context-3.2.xsd
+16:25:54,884 DEBUG DefaultBeanDefinitionDocumentReader:106 - Loading bean definitions
+16:25:54,898 DEBUG DefaultNamespaceHandlerResolver:156 - Loaded NamespaceHandler mappings: {http://www.springframework.org/schema/p=org.springframework.beans.factory.xml.SimplePropertyNamespaceHandler, http://www.springframework.org/schema/mvc=org.springframework.web.servlet.config.MvcNamespaceHandler, http://www.springframework.org/schema/util=org.springframework.beans.factory.xml.UtilNamespaceHandler, http://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler, http://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler, http://www.springframework.org/schema/jdbc=org.springframework.jdbc.config.JdbcNamespaceHandler, http://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler, http://mybatis.org/schema/mybatis-spring=org.mybatis.spring.config.NamespaceHandler, http://www.springframework.org/schema/c=org.springframework.beans.factory.xml.SimpleConstructorNamespaceHandler, http://www.springframework.org/schema/tx=org.springframework.transaction.config.TxNamespaceHandler, http://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler, http://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler, http://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler}
+16:25:54,964 DEBUG StandardEnvironment:112 - Initializing new StandardEnvironment
+16:25:54,964 DEBUG StandardEnvironment:107 - Adding [systemProperties] PropertySource with lowest search precedence
+16:25:54,965 DEBUG StandardEnvironment:107 - Adding [systemEnvironment] PropertySource with lowest search precedence
+16:25:54,965 DEBUG StandardEnvironment:116 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+16:25:55,025 DEBUG PathMatchingResourcePatternResolver:550 - Looking for matching resources in directory tree [C:\kevin\cbx5\workspace\Teach\target\test-classes\edu\gduf\liu]
+16:25:55,026 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\test-classes\edu\gduf\liu] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/test-classes/edu/gduf/liu/**/*.class]
+16:25:55,028 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\test-classes\edu\gduf\liu\mapper] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/test-classes/edu/gduf/liu/**/*.class]
+16:25:55,030 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\test-classes\edu\gduf\liu\service] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/test-classes/edu/gduf/liu/**/*.class]
+16:25:55,032 DEBUG PathMatchingResourcePatternResolver:550 - Looking for matching resources in directory tree [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu]
+16:25:55,033 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/classes/edu/gduf/liu/**/*.class]
+16:25:55,034 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\controller] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/classes/edu/gduf/liu/**/*.class]
+16:25:55,039 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\dao] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/classes/edu/gduf/liu/**/*.class]
+16:25:55,041 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\dao\impl] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/classes/edu/gduf/liu/**/*.class]
+16:25:55,044 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\entity] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/classes/edu/gduf/liu/**/*.class]
+16:25:55,047 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\mapper] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/classes/edu/gduf/liu/**/*.class]
+16:25:55,049 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\service] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/classes/edu/gduf/liu/**/*.class]
+16:25:55,049 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\service\impl] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/classes/edu/gduf/liu/**/*.class]
+16:25:55,053 DEBUG PathMatchingResourcePatternResolver:351 - Resolved location pattern [classpath*:edu/gduf/liu/**/*.class] to resources [file [C:\kevin\cbx5\workspace\Teach\target\test-classes\edu\gduf\liu\mapper\TestUserMapper.class], file [C:\kevin\cbx5\workspace\Teach\target\test-classes\edu\gduf\liu\service\TestUserService.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\controller\HelloController.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\controller\HomeController.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\controller\MovieController.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\controller\WelcomeController.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\dao\impl\UserDaoImpl.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\dao\UserDao.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\entity\Client.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\entity\User.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\mapper\UserMapper.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\service\impl\CopyOfUserServiceImpl.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\service\impl\UserServiceImpl.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\service\UserService.class]]
+16:25:55,084 DEBUG ClassPathBeanDefinitionScanner:273 - Identified candidate component class: file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\controller\HomeController.class]
+16:25:55,086 DEBUG ClassPathBeanDefinitionScanner:273 - Identified candidate component class: file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\controller\MovieController.class]
+16:25:55,087 DEBUG ClassPathBeanDefinitionScanner:273 - Identified candidate component class: file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\controller\WelcomeController.class]
+16:25:55,089 DEBUG ClassPathBeanDefinitionScanner:273 - Identified candidate component class: file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\dao\impl\UserDaoImpl.class]
+16:25:55,092 DEBUG ClassPathBeanDefinitionScanner:273 - Identified candidate component class: file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\service\impl\CopyOfUserServiceImpl.class]
+16:25:55,093 DEBUG ClassPathBeanDefinitionScanner:273 - Identified candidate component class: file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\service\impl\UserServiceImpl.class]
+16:25:55,106 DEBUG BeanDefinitionParserDelegate:500 - Neither XML &apos;id&apos; nor &apos;name&apos; specified - using generated bean name [org.springframework.web.servlet.view.InternalResourceViewResolver#0]
+16:25:55,109 DEBUG BeanDefinitionParserDelegate:500 - Neither XML &apos;id&apos; nor &apos;name&apos; specified - using generated bean name [org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0]
+16:25:55,109 DEBUG BeanDefinitionParserDelegate:500 - Neither XML &apos;id&apos; nor &apos;name&apos; specified - using generated bean name [org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter#0]
+16:25:55,112 DEBUG BeanDefinitionParserDelegate:470 - No XML &apos;id&apos; specified - using &apos;/hc&apos; as bean name and [] as aliases
+16:25:55,115 DEBUG BeanDefinitionParserDelegate:500 - Neither XML &apos;id&apos; nor &apos;name&apos; specified - using generated bean name [org.mybatis.spring.mapper.MapperScannerConfigurer#0]
+16:25:55,116 DEBUG XmlBeanDefinitionReader:216 - Loaded 31 bean definitions from location pattern [src/main/webapp/WEB-INF/spring-servlet.xml]
+16:25:55,116 DEBUG FileSystemXmlApplicationContext:540 - Bean factory for org.springframework.context.support.FileSystemXmlApplicationContext@575fadcf: org.springframework.beans.factory.support.DefaultListableBeanFactory@2eda2cef: defining beans [mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,homeController,movieController,welcomeController,userDao,userService2,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter#0,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,/hc,myDataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager]; root of factory hierarchy
+16:25:55,149 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos;
+16:25:55,150 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos;
+16:25:55,165 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos; to allow for resolving potential circular references
+16:25:55,167 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos;
+16:25:55,168 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.mybatis.spring.mapper.MapperScannerConfigurer#0&apos;
+16:25:55,168 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.mybatis.spring.mapper.MapperScannerConfigurer#0&apos;
+16:25:55,168 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.mybatis.spring.mapper.MapperScannerConfigurer#0&apos; to allow for resolving potential circular references
+16:25:55,204 DEBUG DefaultListableBeanFactory:1525 - Invoking afterPropertiesSet() on bean with name &apos;org.mybatis.spring.mapper.MapperScannerConfigurer#0&apos;
+16:25:55,204 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.mybatis.spring.mapper.MapperScannerConfigurer#0&apos;
+16:25:55,282 DEBUG StandardEnvironment:112 - Initializing new StandardEnvironment
+16:25:55,282 DEBUG StandardEnvironment:107 - Adding [systemProperties] PropertySource with lowest search precedence
+16:25:55,283 DEBUG StandardEnvironment:107 - Adding [systemEnvironment] PropertySource with lowest search precedence
+16:25:55,283 DEBUG StandardEnvironment:116 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+16:25:55,285 DEBUG PathMatchingResourcePatternResolver:550 - Looking for matching resources in directory tree [C:\kevin\cbx5\workspace\Teach\target\test-classes\edu\gduf\liu\mapper]
+16:25:55,286 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\test-classes\edu\gduf\liu\mapper] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/test-classes/edu/gduf/liu/mapper/**/*.class]
+16:25:55,286 DEBUG PathMatchingResourcePatternResolver:550 - Looking for matching resources in directory tree [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\mapper]
+16:25:55,287 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\mapper] for files matching pattern [C:/kevin/cbx5/workspace/Teach/target/classes/edu/gduf/liu/mapper/**/*.class]
+16:25:55,289 DEBUG PathMatchingResourcePatternResolver:351 - Resolved location pattern [classpath*:edu/gduf/liu/mapper/**/*.class] to resources [file [C:\kevin\cbx5\workspace\Teach\target\test-classes\edu\gduf\liu\mapper\TestUserMapper.class], file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\mapper\UserMapper.class]]
+16:25:55,290 DEBUG ClassPathMapperScanner:279 - Ignored because not a concrete top-level class: file [C:\kevin\cbx5\workspace\Teach\target\test-classes\edu\gduf\liu\mapper\TestUserMapper.class]
+16:25:55,290 DEBUG ClassPathMapperScanner:273 - Identified candidate component class: file [C:\kevin\cbx5\workspace\Teach\target\classes\edu\gduf\liu\mapper\UserMapper.class]
+16:25:55,291 DEBUG ClassPathMapperScanner:161 - Creating MapperFactoryBean with name &apos;userMapper&apos; and &apos;edu.gduf.liu.mapper.UserMapper&apos; mapperInterface
+16:25:55,293 DEBUG ClassPathMapperScanner:197 - Enabling autowire by type for MapperFactoryBean with name &apos;userMapper&apos;.
+16:25:55,306 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos;
+16:25:55,306 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos;
+16:25:55,307 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos; to allow for resolving potential circular references
+16:25:55,309 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos;
+16:25:55,309 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos;
+16:25:55,309 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos;
+16:25:55,310 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos; to allow for resolving potential circular references
+16:25:55,311 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos;
+16:25:55,311 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos;
+16:25:55,312 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos;
+16:25:55,317 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos; to allow for resolving potential circular references
+16:25:55,317 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos;
+16:25:55,318 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor&apos;
+16:25:55,318 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor&apos;
+16:25:55,318 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor&apos; to allow for resolving potential circular references
+16:25:55,319 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor&apos;
+16:25:55,322 DEBUG FileSystemXmlApplicationContext:807 - Unable to locate MessageSource with name &apos;messageSource&apos;: using default [org.springframework.context.support.DelegatingMessageSource@191a01dd]
+16:25:55,325 DEBUG FileSystemXmlApplicationContext:831 - Unable to locate ApplicationEventMulticaster with name &apos;applicationEventMulticaster&apos;: using default [org.springframework.context.event.SimpleApplicationEventMulticaster@73367e28]
+16:25:55,332  INFO DefaultListableBeanFactory:596 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2eda2cef: defining beans [mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,homeController,movieController,welcomeController,userDao,userService2,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter#0,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,/hc,myDataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userMapper]; root of factory hierarchy
+16:25:55,333 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;mvcContentNegotiationManager&apos;
+16:25:55,333 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;mvcContentNegotiationManager&apos;
+16:25:55,336 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;mvcContentNegotiationManager&apos; to allow for resolving potential circular references
+16:25:55,346 DEBUG DefaultListableBeanFactory:1525 - Invoking afterPropertiesSet() on bean with name &apos;mvcContentNegotiationManager&apos;
+16:25:55,349 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;mvcContentNegotiationManager&apos;
+16:25:55,350 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0&apos;
+16:25:55,350 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0&apos;
+16:25:55,359 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0&apos; to allow for resolving potential circular references
+16:25:55,366 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;mvcContentNegotiationManager&apos;
+16:25:55,370 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.handler.MappedInterceptor#0&apos;
+16:25:55,370 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.handler.MappedInterceptor#0&apos;
+16:25:55,374 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)&apos;
+16:25:55,375 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.format.support.FormattingConversionServiceFactoryBean#0&apos;
+16:25:55,375 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.format.support.FormattingConversionServiceFactoryBean#0&apos;
+16:25:55,376 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.format.support.FormattingConversionServiceFactoryBean#0&apos; to allow for resolving potential circular references
+16:25:55,379 DEBUG DefaultListableBeanFactory:1525 - Invoking afterPropertiesSet() on bean with name &apos;org.springframework.format.support.FormattingConversionServiceFactoryBean#0&apos;
+16:25:55,391 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.format.support.FormattingConversionServiceFactoryBean#0&apos;
+16:25:55,398 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)&apos;
+16:25:55,408 DEBUG BeanUtils:443 - No property editor [org.springframework.web.context.request.WebRequestInterceptorEditor] found for type org.springframework.web.context.request.WebRequestInterceptor according to &apos;Editor&apos; suffix convention
+16:25:55,408 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.handler.MappedInterceptor#0&apos; to allow for resolving potential circular references
+16:25:55,410 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.handler.MappedInterceptor#0&apos;
+16:25:55,411 DEBUG DefaultListableBeanFactory:1525 - Invoking afterPropertiesSet() on bean with name &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0&apos;
+16:25:55,411 DEBUG RequestMappingHandlerMapping:99 - Looking for request mappings in application context: org.springframework.context.support.FileSystemXmlApplicationContext@575fadcf: startup date [Mon Jul 29 16:25:54 CST 2013]; root of context hierarchy
+16:25:55,417 DEBUG LogFactory:46 - Logging initialized using &apos;class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl&apos; adapter.
+16:25:55,421 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;userMapper&apos;
+16:25:55,421 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;userMapper&apos;
+16:25:55,422 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;userMapper&apos; to allow for resolving potential circular references
+16:25:55,427 DEBUG DefaultListableBeanFactory:242 - Returning eagerly cached instance of singleton bean &apos;userMapper&apos; that is not fully initialized yet - a consequence of a circular reference
+16:25:55,428 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;sqlSessionFactory&apos;
+16:25:55,429 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;sqlSessionFactory&apos;
+16:25:55,431 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;sqlSessionFactory&apos; to allow for resolving potential circular references
+16:25:55,436 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;myDataSource&apos;
+16:25:55,436 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;myDataSource&apos;
+16:25:55,453 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;myDataSource&apos; to allow for resolving potential circular references
+16:25:55,460 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;myDataSource&apos;
+16:25:55,462 DEBUG DefaultListableBeanFactory:1525 - Invoking afterPropertiesSet() on bean with name &apos;sqlSessionFactory&apos;
+16:25:55,463 DEBUG SqlSessionFactoryBean:46 - Property &apos;configLocation&apos; not specified, using default MyBatis Configuration
+16:25:57,091 DEBUG SqlSessionFactoryBean:46 - Property &apos;mapperLocations&apos; was not specified or no matching resources found
+16:25:57,093 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;sqlSessionFactory&apos;
+16:25:57,094 DEBUG DefaultListableBeanFactory:1201 - Autowiring by type from bean name &apos;userMapper&apos; via property &apos;sqlSessionFactory&apos; to bean named &apos;sqlSessionFactory&apos;
+16:25:57,106 DEBUG DefaultListableBeanFactory:1525 - Invoking afterPropertiesSet() on bean with name &apos;userMapper&apos;
+16:25:57,117 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;userMapper&apos;
+16:25:57,135  INFO RequestMappingHandlerMapping:179 - Mapped &quot;{[/home/welcome],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public org.springframework.web.servlet.ModelAndView edu.gduf.liu.controller.HomeController.welcome()
+16:25:57,136  INFO RequestMappingHandlerMapping:179 - Mapped &quot;{[/home/login],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.String edu.gduf.liu.controller.HomeController.login()
+16:25:57,137  INFO RequestMappingHandlerMapping:179 - Mapped &quot;{[/home/client/{name}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public edu.gduf.liu.entity.Client edu.gduf.liu.controller.HomeController.getClient(java.lang.String,java.lang.String)
+16:25:57,140  INFO RequestMappingHandlerMapping:179 - Mapped &quot;{[/movie/{name}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.String edu.gduf.liu.controller.MovieController.getMovie(java.lang.String,org.springframework.ui.ModelMap)
+16:25:57,141  INFO RequestMappingHandlerMapping:179 - Mapped &quot;{[/movie/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public java.lang.String edu.gduf.liu.controller.MovieController.getDefaultMovie(org.springframework.ui.ModelMap)
+16:25:57,143  INFO RequestMappingHandlerMapping:179 - Mapped &quot;{[/wel/wel],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto protected org.springframework.web.servlet.ModelAndView edu.gduf.liu.controller.WelcomeController.doWelcome()
+16:25:57,147 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0&apos;
+16:25:57,147 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.format.support.FormattingConversionServiceFactoryBean#0&apos;
+16:25:57,148 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0&apos;
+16:25:57,148 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0&apos;
+16:25:57,201 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0&apos; to allow for resolving potential circular references
+16:25:57,210 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;mvcContentNegotiationManager&apos;
+16:25:57,211 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#1&apos;
+16:25:57,216 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.format.support.FormattingConversionServiceFactoryBean#0&apos;
+16:25:57,217 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#1&apos;
+16:25:57,218 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#2&apos;
+16:25:57,222 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#2&apos;
+16:25:57,223 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#3&apos;
+16:25:57,230 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#3&apos;
+16:25:57,230 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#4&apos;
+16:25:57,241 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#4&apos;
+16:25:57,242 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#5&apos;
+16:25:57,251 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#5&apos;
+16:25:57,252 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#6&apos;
+16:25:57,262 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#6&apos;
+16:25:57,262 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#7&apos;
+16:25:57,268 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#7&apos;
+16:25:57,269 DEBUG DefaultListableBeanFactory:1525 - Invoking afterPropertiesSet() on bean with name &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0&apos;
+16:25:57,293 DEBUG RequestMappingHandlerAdapter:618 - Looking for controller advice: org.springframework.context.support.FileSystemXmlApplicationContext@575fadcf: startup date [Mon Jul 29 16:25:54 CST 2013]; root of context hierarchy
+16:25:57,295 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0&apos;
+16:25:57,296 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.web.servlet.handler.MappedInterceptor#0&apos;
+16:25:57,296 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0&apos;
+16:25:57,296 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0&apos;
+16:25:57,306 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0&apos; to allow for resolving potential circular references
+16:25:57,311 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;mvcContentNegotiationManager&apos;
+16:25:57,312 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#8&apos;
+16:25:57,312 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#8&apos;
+16:25:57,313 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#9&apos;
+16:25:57,316 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#9&apos;
+16:25:57,317 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#10&apos;
+16:25:57,317 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#10&apos;
+16:25:57,317 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#11&apos;
+16:25:57,319 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#11&apos;
+16:25:57,319 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#12&apos;
+16:25:57,325 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#12&apos;
+16:25:57,326 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;(inner bean)#13&apos;
+16:25:57,327 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;(inner bean)#13&apos;
+16:25:57,327 DEBUG DefaultListableBeanFactory:1525 - Invoking afterPropertiesSet() on bean with name &apos;org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0&apos;
+16:25:57,328 DEBUG ExceptionHandlerExceptionResolver:284 - Looking for exception mappings: org.springframework.context.support.FileSystemXmlApplicationContext@575fadcf: startup date [Mon Jul 29 16:25:54 CST 2013]; root of context hierarchy
+16:25:57,329 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0&apos;
+16:25:57,330 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0&apos;
+16:25:57,330 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0&apos;
+16:25:57,331 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0&apos; to allow for resolving potential circular references
+16:25:57,333 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0&apos;
+16:25:57,333 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0&apos;
+16:25:57,334 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0&apos;
+16:25:57,335 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0&apos; to allow for resolving potential circular references
+16:25:57,337 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0&apos;
+16:25:57,338 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping&apos;
+16:25:57,338 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping&apos;
+16:25:57,339 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping&apos; to allow for resolving potential circular references
+16:25:57,346 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.web.servlet.handler.MappedInterceptor#0&apos;
+16:25:57,346 DEBUG BeanNameUrlHandlerMapping:71 - Looking for URL mappings in application context: org.springframework.context.support.FileSystemXmlApplicationContext@575fadcf: startup date [Mon Jul 29 16:25:54 CST 2013]; root of context hierarchy
+16:25:57,347 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;mvcContentNegotiationManager&apos;: no URL paths identified
+16:25:57,347 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0&apos;: no URL paths identified
+16:25:57,347 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.format.support.FormattingConversionServiceFactoryBean#0&apos;: no URL paths identified
+16:25:57,348 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0&apos;: no URL paths identified
+16:25:57,349 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.handler.MappedInterceptor#0&apos;: no URL paths identified
+16:25:57,349 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0&apos;: no URL paths identified
+16:25:57,349 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0&apos;: no URL paths identified
+16:25:57,349 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0&apos;: no URL paths identified
+16:25:57,350 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping&apos;: no URL paths identified
+16:25:57,350 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter&apos;: no URL paths identified
+16:25:57,350 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter&apos;: no URL paths identified
+16:25:57,351 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;homeController&apos;: no URL paths identified
+16:25:57,351 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;movieController&apos;: no URL paths identified
+16:25:57,351 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;welcomeController&apos;: no URL paths identified
+16:25:57,351 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;userDao&apos;: no URL paths identified
+16:25:57,352 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;userService2&apos;: no URL paths identified
+16:25:57,352 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;userService&apos;: no URL paths identified
+16:25:57,352 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos;: no URL paths identified
+16:25:57,353 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos;: no URL paths identified
+16:25:57,353 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos;: no URL paths identified
+16:25:57,354 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos;: no URL paths identified
+16:25:57,354 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.view.InternalResourceViewResolver#0&apos;: no URL paths identified
+16:25:57,354 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0&apos;: no URL paths identified
+16:25:57,355 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter#0&apos;: no URL paths identified
+16:25:57,355 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0&apos;: no URL paths identified
+16:25:57,355 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0&apos;: no URL paths identified
+16:25:57,356 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;/hc&apos;
+16:25:57,356 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;/hc&apos;
+16:25:57,362 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;/hc&apos; to allow for resolving potential circular references
+16:25:57,370 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;/hc&apos;
+16:25:57,371  INFO BeanNameUrlHandlerMapping:315 - Mapped URL path [/hc] onto handler &apos;/hc&apos;
+16:25:57,371 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;myDataSource&apos;: no URL paths identified
+16:25:57,372 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;sqlSessionFactory&apos;: no URL paths identified
+16:25:57,372 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.mybatis.spring.mapper.MapperScannerConfigurer#0&apos;: no URL paths identified
+16:25:57,372 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;transactionManager&apos;: no URL paths identified
+16:25:57,373 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor&apos;: no URL paths identified
+16:25:57,375 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;userMapper&apos;: no URL paths identified
+16:25:57,376 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;environment&apos;: no URL paths identified
+16:25:57,376 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;systemProperties&apos;: no URL paths identified
+16:25:57,376 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;systemEnvironment&apos;: no URL paths identified
+16:25:57,376 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry&apos;: no URL paths identified
+16:25:57,377 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;messageSource&apos;: no URL paths identified
+16:25:57,377 DEBUG BeanNameUrlHandlerMapping:86 - Rejected bean name &apos;applicationEventMulticaster&apos;: no URL paths identified
+16:25:57,377 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping&apos;
+16:25:57,377 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter&apos;
+16:25:57,377 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter&apos;
+16:25:57,378 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter&apos; to allow for resolving potential circular references
+16:25:57,379 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter&apos;
+16:25:57,380 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter&apos;
+16:25:57,380 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter&apos;
+16:25:57,380 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter&apos; to allow for resolving potential circular references
+16:25:57,382 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter&apos;
+16:25:57,382 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;homeController&apos;
+16:25:57,382 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;homeController&apos;
+16:25:57,384 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;homeController&apos; to allow for resolving potential circular references
+16:25:57,386 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;homeController&apos;
+16:25:57,386 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;movieController&apos;
+16:25:57,386 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;movieController&apos;
+16:25:57,391 DEBUG InjectionMetadata:71 - Registered injected element on class [edu.gduf.liu.controller.MovieController]: ResourceElement for edu.gduf.liu.service.UserService edu.gduf.liu.controller.MovieController.userService
+16:25:57,392 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;movieController&apos; to allow for resolving potential circular references
+16:25:57,393 DEBUG InjectionMetadata:85 - Processing injected method of bean &apos;movieController&apos;: ResourceElement for edu.gduf.liu.service.UserService edu.gduf.liu.controller.MovieController.userService
+16:25:57,394 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;userService&apos;
+16:25:57,394 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;userService&apos;
+16:25:57,394 DEBUG InjectionMetadata:71 - Registered injected element on class [edu.gduf.liu.service.impl.UserServiceImpl]: ResourceElement for private edu.gduf.liu.dao.UserDao edu.gduf.liu.service.impl.UserServiceImpl.userDao
+16:25:57,395 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;userService&apos; to allow for resolving potential circular references
+16:25:57,396 DEBUG InjectionMetadata:85 - Processing injected method of bean &apos;userService&apos;: ResourceElement for private edu.gduf.liu.dao.UserDao edu.gduf.liu.service.impl.UserServiceImpl.userDao
+16:25:57,397 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;userDao&apos;
+16:25:57,397 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;userDao&apos;
+16:25:57,397 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;userDao&apos; to allow for resolving potential circular references
+16:25:57,399 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;userDao&apos;
+16:25:57,400 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;userService&apos;
+16:25:57,400 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;movieController&apos;
+16:25:57,400 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;welcomeController&apos;
+16:25:57,400 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;welcomeController&apos;
+16:25:57,401 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;welcomeController&apos; to allow for resolving potential circular references
+16:25:57,403 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;welcomeController&apos;
+16:25:57,403 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;userDao&apos;
+16:25:57,403 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;userService2&apos;
+16:25:57,403 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;userService2&apos;
+16:25:57,404 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;userService2&apos; to allow for resolving potential circular references
+16:25:57,405 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;userService2&apos;
+16:25:57,405 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;userService&apos;
+16:25:57,406 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.context.annotation.internalConfigurationAnnotationProcessor&apos;
+16:25:57,406 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.context.annotation.internalAutowiredAnnotationProcessor&apos;
+16:25:57,406 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.context.annotation.internalRequiredAnnotationProcessor&apos;
+16:25:57,406 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.context.annotation.internalCommonAnnotationProcessor&apos;
+16:25:57,406 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.view.InternalResourceViewResolver#0&apos;
+16:25:57,407 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.view.InternalResourceViewResolver#0&apos;
+16:25:57,414 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.view.InternalResourceViewResolver#0&apos; to allow for resolving potential circular references
+16:25:57,419 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.view.InternalResourceViewResolver#0&apos;
+16:25:57,420 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0&apos;
+16:25:57,421 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0&apos;
+16:25:57,421 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0&apos; to allow for resolving potential circular references
+16:25:57,421 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter#0&apos;
+16:25:57,422 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter#0&apos;
+16:25:57,422 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter#0&apos;
+16:25:57,422 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter#0&apos; to allow for resolving potential circular references
+16:25:57,422 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter#0&apos;
+16:25:57,423 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0&apos;
+16:25:57,423 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0&apos;
+16:25:57,424 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0&apos; to allow for resolving potential circular references
+16:25:57,429 DEBUG DefaultListableBeanFactory:1525 - Invoking afterPropertiesSet() on bean with name &apos;org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0&apos;
+16:25:57,430 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0&apos;
+16:25:57,430 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0&apos;
+16:25:57,430 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0&apos;
+16:25:57,432 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0&apos; to allow for resolving potential circular references
+16:25:57,439 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.web.servlet.handler.MappedInterceptor#0&apos;
+16:25:57,439 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0&apos;
+16:25:57,440  INFO SimpleUrlHandlerMapping:315 - Mapped URL path [/scripts/**] onto handler &apos;org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0&apos;
+16:25:57,440 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0&apos;
+16:25:57,440 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;/hc&apos;
+16:25:57,440 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;myDataSource&apos;
+16:25:57,441 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;sqlSessionFactory&apos;
+16:25:57,441 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.mybatis.spring.mapper.MapperScannerConfigurer#0&apos;
+16:25:57,441 DEBUG DefaultListableBeanFactory:215 - Creating shared instance of singleton bean &apos;transactionManager&apos;
+16:25:57,441 DEBUG DefaultListableBeanFactory:432 - Creating instance of bean &apos;transactionManager&apos;
+16:25:57,451 DEBUG DefaultListableBeanFactory:506 - Eagerly caching bean &apos;transactionManager&apos; to allow for resolving potential circular references
+16:25:57,457 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;myDataSource&apos;
+16:25:57,457 DEBUG DefaultListableBeanFactory:1525 - Invoking afterPropertiesSet() on bean with name &apos;transactionManager&apos;
+16:25:57,457 DEBUG DefaultListableBeanFactory:460 - Finished creating instance of bean &apos;transactionManager&apos;
+16:25:57,458 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor&apos;
+16:25:57,458 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;userMapper&apos;
+16:25:57,460 DEBUG FileSystemXmlApplicationContext:858 - Unable to locate LifecycleProcessor with name &apos;lifecycleProcessor&apos;: using default [org.springframework.context.support.DefaultLifecycleProcessor@10d4f27]
+16:25:57,461 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;lifecycleProcessor&apos;
+16:25:57,464 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;sqlSessionFactory&apos;
+16:25:57,466 DEBUG PropertySourcesPropertyResolver:72 - Searching for key &apos;spring.liveBeansView.mbeanDomain&apos; in [systemProperties]
+16:25:57,466 DEBUG PropertySourcesPropertyResolver:72 - Searching for key &apos;spring.liveBeansView.mbeanDomain&apos; in [systemEnvironment]
+16:25:57,467 DEBUG PropertySourcesPropertyResolver:94 - Could not find key &apos;spring.liveBeansView.mbeanDomain&apos; in any property source. Returning [null]
+16:25:57,468 DEBUG DefaultListableBeanFactory:246 - Returning cached instance of singleton bean &apos;userMapper&apos;
+</system-out>
+  </testcase>
+</testsuite>

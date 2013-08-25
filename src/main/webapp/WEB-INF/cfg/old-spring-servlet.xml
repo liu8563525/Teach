@@ -1,0 +1,46 @@
+<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean> -->
+
+
+<!-- 多视图处理器 -->
+   <bean class="edu.gduf.liu.view.MixedViewResolver">
+    <property name="resolvers">
+        <map>
+            <entry key="jsp">
+                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <property name="prefix" value="/WEB-INF/jsp/"/>
+                    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+                </bean>
+            </entry>
+            <entry key="ftl">
+                <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+                    <property name="cache" value="true"/>
+                    <property name="contentType" value="text/html;charset=UTF-8"></property>
+                    <!-- 宏命令的支持  -->
+                    <property name="exposeSpringMacroHelpers" value="true"/>
+                    <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+                    <property name="requestContextAttribute" value="rc"></property>
+                </bean>
+            </entry>
+        </map>
+    </property>
+	</bean>
+
+<!-- <bean id="freemarkerController" class="edu.gduf.liu.controller.FreemarkerController"/>
+	<bean id="controllerInterceptor" class="edu.gduf.liu.interceptor.ControllerInterceptor"/> -->
+	<!-- <bean id="handlerMapping"
+            class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"> -->
+    <!-- <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+          <property name="interceptors">
+              <list>
+                 <ref bean="controllerInterceptor" />
+              </list>
+          </property>
+          <property name="mappings">
+              <props>
+                 <prop key="/Teach/freeMarker/hello">freemarkerController</prop>
+             </props>
+         </property>
+     </bean> -->

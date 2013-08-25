@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<mvc:annotation-driven /><!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射 -->
+	<!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
+	<context:component-scan base-package="edu.gduf.liu">
+		<context:exclude-filter type="regex"
+		expression="edu.gduf.liu.mapper.*"/>
+	</context:component-scan>
+	<!-- 表示所有实现了org.springframework.web.servlet.mvc.Controller接口的Bean可以作为Spring Web MVC中的处理器。如果需要其他类型的处理器可以通过实现HadlerAdapter来解决。 -->
+	<!-- <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+	<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter" /> -->
+	<!-- 用于持有ApplicationContext,可以使用SpringContextHolder.getBean('xxxx')的静态方法得到spring bean对象 -->
+	<bean class="edu.gduf.liu.utils.SpringContextHolder" lazy-init="false" />
+
+	<mvc:interceptors>
+		<!-- <mvc:interceptor> -->
+		 	<!-- <mvc:mapping path="/*" /> /user/* -->
+    		<!-- <bean class="edu.gduf.liu.interceptor.ControllerInterceptor" /> -->
+    		<bean class="edu.gduf.liu.interceptor.StopWatchHandlerInterceptor"/>
+    	<!-- </mvc:interceptor> -->
+	</mvc:interceptors>
+	<!-- 对静态资源文件的访问  方案一 （二选一） --><!-- <mvc:default-servlet-handler /> -->
+	 <!-- 对静态资源文件的访问  方案二 （二选一）-->
+	 <mvc:resources mapping="/js/**"  location="/WEB-INF/js/"/><!--放过/js下的静态文件 -->
+     <mvc:resources mapping="/styles/**"  location="/WEB-INF/css/"/>
+     <mvc:resources mapping="/images/**"  location="/WEB-INF/images/"/>
+     <!-- <mvc:resources mapping="/favicon.ico" location="/favicon.ico/" /> -->
+
+	<!-- 国际化支持 -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename">
+            <value>messages</value>
+        </property>
+    </bean>
+
+    <!-- 配置freeMarker的模板路径 -->
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+	    <property name="templateLoaderPath" value="/WEB-INF/ftl/"/>
+	    <!--property name="freemarkerSettings" ref="freemarkerConfiguration"/-->
+		<property name="freemarkerSettings">
+			<props>
+			<prop key="template_update_delay">${template_update_delay}</prop><!-- 在生产环境下更新模板的间隔要根据实际情况设置，这里为开发方便设置为5秒 -->
+			<prop key="default_encoding">${output_encoding}</prop>
+			<prop key="locale">zh_CN</prop>
+			<prop key="defaultEncoding">UTF-8</prop>
+			<prop key="number_format">0.##########</prop>
+			<!-- <prop key="number_format">#.##</prop> -->
+			<prop key="date_format">yyyy-MM-dd</prop>
+            <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+            <prop key="classic_compatible">true</prop><!-- 处理freemaker输出字符串为null时报exception -->
+            <prop key="template_exception_handler">ignore</prop>
+			<!-- 我把spring.ftl里的内容和项目里要用到的公共的macro合在一起了 --><!-- <prop key="auto_import">common/website.ftl as website</prop> -->
+      		<prop key="auto_import">macro/spring.ftl as spring</prop>
+			</props>
+		</property>
+	    <property name="freemarkerVariables">
+	        <map>
+	            <entry key="xml_escape" value-ref="fmXmlEscape" />
+	            <entry key="webRoot" value="${webRoot}"></entry>
+                <entry key="jsRoot" value="${jsRoot}"></entry>
+	        </map>
+	    </property>
+	</bean>
+	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
+
+	<!-- 这个是针对返回视图还是json值的视图配置   来分别处理同步和异步请求 --> <!-- 。。。。.....................多视图处理.................。。。。。。.. -->
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+            <property name="mediaTypes">
+                <map>
+                    <entry key="html" value="text/html" />
+                    <entry key="json" value="application/json" />
+                </map>
+            </property>
+            <property name="favorParameter" value="true" />
+            <property name="viewResolvers">
+                <list>
+                    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+                    <bean id="viewResolver"
+                        class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+                        <property name="cache" value="true" />
+                        <property name="order" value="2"/>
+                        <property name="prefix" value="" />
+                        <!-- <property name="viewNames" value="*.ftl"/> --><!-- 与 suffix=.ftl重复了-->
+                        <property name="suffix" value=".ftl" />
+                        <property name="contentType" value="text/html;charset=UTF-8"></property>
+                        <property name="requestContextAttribute" value="request" />
+                        <property name="exposeSpringMacroHelpers" value="true" />
+                        <property name="exposeRequestAttributes" value="true" />
+                        <property name="exposeSessionAttributes" value="true" />
+                    </bean>
+                    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+						p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+					<!-- <bean>
+					    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+					    <property name="prefix" value="/WEB-INF/jsp/"/>
+					    <property name="suffix" value=".jsp"/>
+					</bean> -->
+                </list>
+            </property>
+            <property name="defaultContentType" value="text/html" />
+        </bean>
+
+	<bean name="/hc" class="edu.gduf.liu.controller.HelloController" />
+
+	<!-- 全局异常配置 start -->
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+			<prop key="java.sql.SQLException">errors/showDBError</prop>
+			<prop key="java.lang.RuntimeException">errors/showError</prop>
+			</props>
+		</property>
+		<property name="statusCodes">
+             <props>
+                 <prop key="errors/error">500</prop>
+                 <prop key="errors/404">404</prop>
+             </props>
+         </property>
+         <property name="defaultErrorView"><!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->
+		 	<value>errors/error</value>
+		</property>
+		<property name="defaultStatusCode"><!-- 默认HTTP状态码 -->
+		 	<value>500</value>
+		</property>
+         <property name="warnLogCategory" value="WARN"></property><!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
+		<!-- <property name="warnLogCategory">
+		 	<value>org.springframework.web.servlet.handler.SimpleMappingExceptionResolver</value>
+		</property> -->
+	</bean>
+	<!-- 全局异常配置 end -->
+
+</beans>

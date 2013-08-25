@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射 -->
+	<mvc:annotation-driven />
+	<!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
+	<context:component-scan base-package="edu.gduf.liu" >
+		<context:exclude-filter type="regex"
+		expression="edu.gduf.liu.mapper.*" />
+	</context:component-scan>
+	<!-- 表示所有实现了org.springframework.web.servlet.mvc.Controller接口的Bean可以作为Spring Web MVC中的处理器。如果需要其他类型的处理器可以通过实现HadlerAdapter来解决。 -->
+	<!-- <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+	<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter" /> -->
+	<!-- 用于持有ApplicationContext,可以使用SpringContextHolder.getBean('xxxx')的静态方法得到spring bean对象 -->
+	<bean class="edu.gduf.liu.utils.SpringContextHolder" lazy-init="false" />
+
+	<mvc:interceptors>
+		<!-- <mvc:interceptor> -->
+		 	<!-- <mvc:mapping path="/*" /> /user/* -->
+    		<bean class="edu.gduf.liu.interceptor.ControllerInterceptor" />
+    		<bean class="edu.gduf.liu.interceptor.StopWatchHandlerInterceptor"/>
+    	<!-- </mvc:interceptor> -->
+	</mvc:interceptors>
+	<!-- 对静态资源文件的访问  方案一 （二选一） -->
+	 <!-- <mvc:default-servlet-handler /> -->
+	 <!-- 对静态资源文件的访问  方案二 （二选一）-->
+	 <mvc:resources mapping="/js/**"  location="/WEB-INF/js/"/><!--放过/js下的静态文件 -->
+     <mvc:resources mapping="/styles/**"  location="/WEB-INF/css/"/>
+     <mvc:resources mapping="/images/**"  location="/WEB-INF/images/"/>
+     <!-- <mvc:resources mapping="/favicon.ico" location="/favicon.ico/" /> -->
+
+	<!-- 国际化支持 -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename">
+            <value>messages</value>
+        </property>
+    </bean>
+	<!-- 设置jdbc与freeMarker的配置文件路径 --><!-- class="org.springframework.beans.factory.config.PropertiesFactoryBean" -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+            	<value>classpath:jdbc.properties</value>
+                <!-- <value>classpath*:jdbc.properties</value> -->
+                <value>classpath:freemarker.properties</value>
+                <!-- <value>classpath:messages.properties</value> -->
+            </list>
+        </property>
+    </bean>
+
+    <!-- 配置freeMarker的模板路径 -->
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+	    <property name="templateLoaderPath" value="/WEB-INF/ftl/"/>
+	    <!--property name="freemarkerSettings" ref="freemarkerConfiguration"/-->
+		<property name="freemarkerSettings">
+			<props>
+			<!-- 在生产环境下更新模板的间隔要根据实际情况设置，这里为开发方便设置为5秒 -->
+			<prop key="template_update_delay">${template_update_delay}</prop>
+			<prop key="default_encoding">${output_encoding}</prop>
+			<prop key="locale">zh_CN</prop>
+			<prop key="defaultEncoding">UTF-8</prop>
+			<!-- 我把spring.ftl里的内容和项目里要用到的公共的macro合在一起了 -->
+			<!-- <prop key="auto_import">common/website.ftl as website</prop> -->
+      		<prop key="auto_import">macro/spring.ftl as spring</prop>
+			</props>
+		</property>
+	    <property name="freemarkerVariables">
+	        <map>
+	            <entry key="xml_escape" value-ref="fmXmlEscape" />
+	            <entry key="webRoot" value="${webRoot}"></entry>
+                <entry key="jsRoot" value="${jsRoot}"></entry>
+	        </map>
+	    </property>
+	</bean>
+	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
+
+	<!-- 配置freeMarker视图解析器 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+	    <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+	    <property name="viewNames" value="*.ftl"/>
+	    <property name="contentType" value="text/html; charset=utf-8"/>
+	    <property name="cache" value="true" />
+	    <property name="prefix" value="" /><!-- value="/WEB-INF/ftl" -->
+	    <property name="suffix" value="" /><!-- value=".ftl" -->
+	    <property name="order" value="2"/>
+	    <property name="requestContextAttribute" value="request" />
+        <property name="exposeSpringMacroHelpers" value="true" />
+        <property name="exposeRequestAttributes" value="true" />
+        <property name="exposeSessionAttributes" value="true" />
+	</bean>
+	<!-- 对模型视图名称的解析，在WEB-INF/jsp目录下找对应的jsp文件 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+	<!-- ViewResolver -->
+	<!-- <bean>
+	    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+	    <property name="prefix" value="/WEB-INF/jsp/"/>
+	    <property name="suffix" value=".jsp"/>
+	</bean> -->
+
+	<bean name="/hc" class="edu.gduf.liu.controller.HelloController" />
+
+	<!-- 全局异常配置 start -->
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+			<prop key="java.sql.SQLException">showDBError</prop>
+			<prop key="java.lang.RuntimeException">showError</prop>
+			</props>
+		</property>
+		<property name="statusCodes">
+             <props>
+                 <!-- <prop key="errors/error">500</prop> -->
+                 <prop key="errors/404">404</prop>
+             </props>
+         </property>
+         <!-- 默认错误页面，当找不到上面mappings中指定的异常对应视图时，使用本默认配置 -->
+         <property name="defaultErrorView">
+		 	<value>error</value>
+		</property>
+		<!-- 默认HTTP状态码 -->
+		<property name="defaultStatusCode">
+		 	<value>404</value>
+		</property>
+		<!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
+         <property name="warnLogCategory" value="WARN"></property>
+		<!-- <property name="warnLogCategory">
+		 	<value>org.springframework.web.servlet.handler.SimpleMappingExceptionResolver</value>
+		</property> -->
+	</bean>
+	<!-- 全局异常配置 end -->
+
+	<!-- <context:property-placeholder location="classpath:jdbc.properties"/> -->
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	  <property name="driverClassName"><value>${mysql.driverClassName}</value></property>
+	  <property name="url"><value>${mysql.url}</value></property>
+	  <property name="username"><value>${mysql.username}</value></property>
+	  <property name="password" value="${mysql.password}"></property>
+	  <property name="initialSize" value="${mysql.initialSize}"></property>
+	  <property name="maxActive"><value>${mysql.maxActive}</value></property>
+      <property name="maxIdle"><value>${mysql.maxIdle}</value></property>
+      <property name="minIdle"><value>${mysql.minIdle}</value></property>
+      <property name="maxWait" value="${mysql.maxWait}"></property>
+	</bean>
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+	<!-- <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	  <property name="driverClassName" ><value>${oracle.driverClassName}</value> </property>
+	  <property name="url"><value>${oracle.url}</value></property>
+	  <property name="username"><value>${oracle.username}</value></property>
+	  <property name="password"><value>${oracle.password}</value></property>
+	</bean> -->
+
+	<!-- 配置sqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="myDataSource" />
+        <property name="configurationProperties">
+        <props>
+            <prop key="dialect">mysql</prop>
+        </props>
+    	</property>
+        <!-- <property name="configurationProperties" value="classpath:myBatis.properties"/> -->
+        <!-- <property name="configLocation" value="classpath:myBatis.xml"/> -->
+    </bean>
+    <!-- 配置sqlSessionTemplate -->
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory" />
+    </bean>
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="myDataSource" />
+		</property>
+	</bean>
+	<!-- 注册Mapper方式二：也可不指定特定mapper，而使用自动扫描包的方式来注册各种Mapper ，配置如下：-->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- <property name="annotationClass" value="org.springframework.stereotype.Repository"/>  -->
+		<property name="basePackage" value="edu.gduf.liu.mapper" />
+		<!-- <property name="sqlSessionFactory" ref="sqlSessionFactory"/> -->
+	</bean>
+
+    <bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="myDataSource" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>

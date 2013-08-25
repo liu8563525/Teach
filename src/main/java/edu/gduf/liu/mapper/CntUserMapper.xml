@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gduf.liu.mapper.CntUserMapper">
+	<!--配置一个resultMap 指定返回的类型 -->
+    <resultMap id="cntUser" type="edu.gduf.liu.entity.CntUser">
+        <!-- <id column="dp_id" property="dp_id" /> -->
+        <result column="id" property="id" />
+        <result column="doc_status" property="doc_status" />
+        <result column="domain_id" property="domain_id" />
+        <result column="user_name" property="user_name" />
+        <result column="password" property="password" />
+    </resultMap>
+
+	<select id="getCntUsers" parameterType="java.lang.String"
+		resultMap="cntUser">
+		<!-- select id,user_name,password from user -->
+		select id,user_name,password from
+		(select t.*,rownum r from cnt_user t)
+		<if test="pageStartRow != null and pageEndRow != null ">
+			where r between #{pageStartRow} and #{pageEndRow}    <!-- 不要加加上字符 ';'-->
+		</if>
+	</select>
+	<select id="getCntUsers2" resultMap="cntUser">
+		<!-- select id,doc_status,domain_id,user_name,password from cnt_user -->
+		select * from cnt_user
+	</select>
+
+	<select id="getCntUser" parameterType="java.lang.String"
+		resultMap="cntUser">
+		<!-- select * from ( -->select rownum no,doc_status,domain_id from cnt_user u
+		<where>
+			<if test="doc_status != null and doc_status != '' ">
+				u.doc_status=#{doc_status}
+			</if>
+			<if test="domain_id != null and domain_id != '' ">
+			and u.domain_id=#{domain_id}
+			</if>
+			<!-- and rownum = 10 -->
+		</where><!-- )
+		where no>10 -->
+	</select>
+	<!-- <select id="countAll" resultType="int">
+		select count(*) from user
+	</select> -->
+	<!-- 当使用该Mybatis与Spring整合的时候，该文件必须和相应的Mapper接口文件同名，并在同一路径下 -->
+</mapper>
