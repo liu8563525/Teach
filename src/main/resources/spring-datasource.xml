@@ -44,7 +44,7 @@
 		</property>
 	</bean>
 
-	<!-- <bean id="sessionFactory"
+	<bean id="sessionFactory"
 	class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 	<property name="configLocation" value="classpath:hibernate.cfg.xml">
 	</property>
@@ -57,7 +57,7 @@
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
-	</bean> -->
+	</bean>
 
 	<!-- <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 	  <property name="configLocation" value="classpath:SqlMapConfig.xml" />

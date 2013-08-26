@@ -33,7 +33,7 @@ public class TestUserMapper3 extends TestBase {
 		UserMapper userMapper = (UserMapper) wac.getBean(UserMapper.class);
 		/* UserMapper userMapper = (UserMapper)aContext.getBean("userMapper"); */
 		/* System.out.println(userMapper.getUser("admin")); */
-		int n = 100;
+		int n = 10;
 		long consumeTime = 0;
 		for (int i = 0; i < n; i++) {
 			long beginTime = System.currentTimeMillis();// 1、开始时间

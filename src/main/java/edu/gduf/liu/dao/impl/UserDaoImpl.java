@@ -8,17 +8,21 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.ConnectionCallback;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.RowMapperResultSetExtractor;
+import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Repository;
 
 import edu.gduf.liu.base.BaseDao;
 import edu.gduf.liu.dao.UserDao;
 import edu.gduf.liu.dao.impl.CntUserDaoImpl.UserRowMapper;
 import edu.gduf.liu.entity.User;
+import edu.gduf.liu.utils.SpringContextHolder;
 
 @Repository("userDao")
 public class UserDaoImpl extends BaseDao implements UserDao{
@@ -42,7 +46,41 @@ public class UserDaoImpl extends BaseDao implements UserDao{
 	}
 	public boolean insertBatch(List<User> list){
 		final List<User> tempUsers=list;
-		jdbcTemplate.execute(new ConnectionCallback<String>() {
+		DataSource dataSource = (DataSource) SpringContextHolder.getBean("dataSource");
+		Connection conn = DataSourceUtils.getConnection(dataSource);
+		try {
+			conn.setAutoCommit(false);
+			StringBuilder sql = new StringBuilder();
+			sql.append("insert into user(name,password,type) values(?,?,?)");
+			PreparedStatement pStatement = conn.prepareStatement(sql
+					.toString());
+			int i = 0;
+			for (User user : tempUsers) {
+				String name = user.getName();
+				String password = user.getPassword();
+				String type = user.getType();
+				pStatement.setString(1, name);
+				pStatement.setString(2, password);
+				pStatement.setString(3, type);
+				pStatement.addBatch();
+				pStatement.clearParameters();
+				if (i%1000==0||i==tempUsers.size()) {
+					pStatement.executeBatch();
+				}
+			}
+			//pStatement.executeBatch();
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}finally{
+			DataSourceUtils.releaseConnection(conn, dataSource);
+		}
+		/*jdbcTemplate.execute(new ConnectionCallback<String>() {
 			public String doInConnection(Connection conn) throws SQLException,
 					DataAccessException {
 				conn.setAutoCommit(false);
@@ -70,22 +108,22 @@ public class UserDaoImpl extends BaseDao implements UserDao{
 				//pStatement.executeBatch();
 				conn.commit();
 				//创建调用存储过程的预定义SQL语句
-                /*String sql = "{call user_insert(?)}";
+                //String sql = "{call user_insert(?)}";
                 //创建过程执行器
-                CallableStatement cstmt = conn.prepareCall(sql);
+                //CallableStatement cstmt = conn.prepareCall(sql);
                 //设置入参和出参
                 //cstmt.setString(1, "wangwu");
-                cstmt.setInt(1, 100);
+                //cstmt.setInt(1, 100);
                 //cstmt.setString(2, "111111");
                 //cstmt.registerOutParameter(3, Types.BIGINT); //注册出参
-                cstmt.executeUpdate(); */
+                //cstmt.executeUpdate();
                 //获取输出参数值（两种方式都行）
                 //Long id = cstmt.getLong(3);
                 //Long id = cstmt.getLong("out_id");
                 //System.out.println("本次插入数据的id=" + id);
 				return "success";
 			}
-		});
+		});*/
 		return true;
 	}
 	public boolean insertBatchByJdbcTemplate(List<User> list){
@@ -133,8 +171,27 @@ public class UserDaoImpl extends BaseDao implements UserDao{
 
 	public List<User> getUsers() {
 		//List<User> userList = hibernateTemplate.find("from User");
-		User userBean = new User();
-		//return getBeansByBean(userBean);
+		/*User userBean = new User();
+		return getBeansByBean(userBean);*/
+		/*DataSource dataSource = (DataSource) SpringContextHolder.getBean("dataSource");
+		Connection conn = DataSourceUtils.getConnection(dataSource);
+		List<User> userList = new ArrayList<User>();
+		try {
+			PreparedStatement ps = conn.prepareStatement("select * from user");
+			ResultSet rs=ps.executeQuery();
+			while (rs.next()) {
+				User user =new User();
+				user.setId(rs.getInt("id"));
+				user.setName(rs.getString("name"));
+				user.setPassword(rs.getString("password"));
+				userList.add(user);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			DataSourceUtils.releaseConnection(conn, dataSource);
+		}
+		return userList;*/
 		return findAllByRowMapperResultReader();
 	}
 	class UserRowMapper implements RowMapper<Object> {

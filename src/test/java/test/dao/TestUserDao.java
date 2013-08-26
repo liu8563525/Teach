@@ -26,7 +26,7 @@ public class TestUserDao extends TestBase {
 	@Test
 	public void testGetUsers() throws InterruptedException {
 		UserDao userDao = (UserDao) wac.getBean(UserDao.class);
-		int n = 100;
+		int n = 10;
 		long consumeTime = 0;
 		for (int i = 0; i < n; i++) {
 			long beginTime = System.currentTimeMillis();// 1、开始时间
