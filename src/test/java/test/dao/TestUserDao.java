@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
-import org.springframework.transaction.annotation.Transactional;
 
 import edu.gduf.liu.dao.UserDao;
 import edu.gduf.liu.entity.User;
