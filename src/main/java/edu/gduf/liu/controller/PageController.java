@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import edu.gduf.liu.entity.User;
 
 /**
- * 
+ *
  * @author kevin.liu
- * 
+ *
  */
 @Controller
 @RequestMapping("/paging")
@@ -36,6 +36,8 @@ public class PageController {
 		}
 		this.datas = back;
 		logger.info("init paging");
+		System.out.println("登录request>" + request);
+		System.out.println("登录1>" + request.getSession().getId());
 		// 获取当前页号
 		int pageNo = 1;
 		String pageNoStr = request.getParameter("pageNo");
@@ -70,12 +72,12 @@ public class PageController {
 		request.setAttribute("pageNo", pageNo);
 		request.setAttribute("pageSize", PAGER_PAGESIZE);
 		request.setAttribute("recordCount", recordCount);
-		
+
 		//转发请求到FTL页面
 		//request.getRequestDispatcher("/index.ftl").forward(request, response);
 		//转发请求到JSP页面
 		//request.getRequestDispatcher("/pager.jsp").forward(request, response);
-		
+
 		map.addAttribute("name", "liu");
 		return "paging";
 	}

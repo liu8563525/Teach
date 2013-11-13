@@ -36,7 +36,9 @@ public class StopWatchHandlerInterceptor extends HandlerInterceptorAdapter {
 	    return false;*/
 		long beginTime = System.currentTimeMillis();// 1、开始时间
 		startTimeThreadLocal.set(beginTime);// 线程绑定变量（该数据只有当前请求的线程可见
-		//logger.info("StopWatchHandlerInterceptor.preHandle()-----");
+		logger.info("StopWatchHandlerInterceptor.preHandle()-----");
+		System.out.println("注入request" + request);
+		System.out.println("注入" + request.getSession().getId());
 		return true;// 继续流程
 	}
 

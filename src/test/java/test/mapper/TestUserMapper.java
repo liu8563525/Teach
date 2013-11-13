@@ -11,7 +11,7 @@ public class TestUserMapper {
 
 	@Test
 	public void testCountAll() {
-		ApplicationContext aContext = new FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/cfg/spring-servlet.xml");
+		ApplicationContext aContext = new FileSystemXmlApplicationContext("/src/main/resources/spring-servlet.xml");
 		UserMapper userMapper = (UserMapper)aContext.getBean(UserMapper.class);
 		/*UserMapper userMapper = (UserMapper)aContext.getBean("userMapper");*/
 		/*System.out.println(userMapper.getUser("admin"));*/

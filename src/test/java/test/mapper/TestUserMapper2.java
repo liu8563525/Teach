@@ -11,10 +11,10 @@ import edu.gduf.liu.mapper.UserMapper;
 /*@RunWith(value = SpringJUnit4ClassRunner.class)*/
 @Configuration("src/main/webapp/WEB-INF/spring-servlet.xml")
 public class TestUserMapper2 {
-	
+
 	@Autowired
 	UserMapper userMapper;
-	
+
 	@Transactional
 	public void countAllTest() {
 		//ApplicationContext aContext = new FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/spring-servlet.xml");
