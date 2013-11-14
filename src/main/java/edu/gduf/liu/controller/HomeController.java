@@ -1,5 +1,8 @@
 package edu.gduf.liu.controller;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.*;
@@ -48,5 +51,22 @@ public class HomeController {
 		client.setName(title + " " + name);
 
 		return client;
+	}
+
+	@RequestMapping("/hello1")
+	public String testException1() throws IOException{
+		boolean exceptionFlag = true;
+		if (exceptionFlag){
+			throw new IOException();
+		}
+		return "hello";
+	}
+	@RequestMapping("/hello2")
+	public String testException2() throws SQLException{
+		boolean exceptionFlag = true;
+		if (exceptionFlag){
+			throw new SQLException();
+		}
+		return "hello";
 	}
 }

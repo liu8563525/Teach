@@ -14,9 +14,10 @@
 
 	<mvc:annotation-driven /><!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射 -->
 	<!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
-	<context:component-scan base-package="edu.gduf.liu">
-		<context:exclude-filter type="regex"
-		expression="edu.gduf.liu.mapper.*"/>
+	<context:component-scan base-package="edu.gduf.liu" > <!-- use-default-filters="false" -->
+		<!-- <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
+		<!-- <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/> -->
+		<context:exclude-filter type="regex" expression="edu.gduf.liu.mapper.*"/>
 	</context:component-scan>
 	<!-- 表示所有实现了org.springframework.web.servlet.mvc.Controller接口的Bean可以作为Spring Web MVC中的处理器。如果需要其他类型的处理器可以通过实现HadlerAdapter来解决。 -->
 	<!-- <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
@@ -120,7 +121,10 @@
 		<property name="exceptionMappings">
 			<props>
 			<prop key="java.sql.SQLException">errors/showDBError</prop>
-			<prop key="java.lang.RuntimeException">errors/showError</prop>
+			<!-- <prop key="java.lang.RuntimeException">errors/showError</prop> -->
+			<!-- <prop key="edu.gduf.liu.exception.SpringException">
+            errors/showError
+         	</prop> -->
 			</props>
 		</property>
 		<property name="statusCodes">
@@ -133,7 +137,7 @@
 		 	<value>errors/error</value>
 		</property>
 		<property name="defaultStatusCode"><!-- 默认HTTP状态码 -->
-		 	<value>500</value>
+		 	<value>404</value>
 		</property>
          <property name="warnLogCategory" value="WARN"></property><!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
 		<!-- <property name="warnLogCategory">

@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.swing.Spring;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import edu.gduf.liu.entity.User;
+import edu.gduf.liu.exception.SpringException;
 
 /**
  *
@@ -38,6 +39,7 @@ public class PageController {
 		logger.info("init paging");
 		System.out.println("登录request>" + request);
 		System.out.println("登录1>" + request.getSession().getId());
+
 		// 获取当前页号
 		int pageNo = 1;
 		String pageNoStr = request.getParameter("pageNo");
@@ -79,6 +81,11 @@ public class PageController {
 		//request.getRequestDispatcher("/pager.jsp").forward(request, response);
 
 		map.addAttribute("name", "liu");
+		if (back.size()>0) {
+			SpringException springException=new SpringException("springException");
+			throw springException;
+		}else{
 		return "paging";
+		}
 	}
 }

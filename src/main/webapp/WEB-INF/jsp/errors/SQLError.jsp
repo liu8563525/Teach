@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=GBK">
-<title>错误页面error</title>
+<title>错误页面SQLError</title>
 </head>
 <body>
-<h1>出错了error</h1>
+<h1>出错了SQLError</h1>
 <%
 /* Exception e = (Exception)request.getAttribute("exception");
 out.print(e.getMessage()); */

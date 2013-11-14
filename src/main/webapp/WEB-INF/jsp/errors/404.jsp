@@ -10,8 +10,8 @@
 <body>
 <h1>ณ๖ดํมห404</h1>
 <%
-Exception e = (Exception)request.getAttribute("exception");
-out.print(e.getMessage());
+/* Exception e = (Exception)request.getAttribute("exception");
+out.print(e.getMessage()); */
 %>
 </body>
 </html>
