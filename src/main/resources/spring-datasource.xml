@@ -111,7 +111,7 @@
 		</property>
 	</bean>
 
-	<bean id="sessionFactory"
+	<!-- <bean id="sessionFactory"
 	class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 	<property name="configLocation" value="classpath:hibernate.cfg.xml">
 	</property>
@@ -124,7 +124,7 @@
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
-	</bean>
+	</bean> -->
 
 	<!-- <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 	  <property name="configLocation" value="classpath:SqlMapConfig.xml" />
@@ -151,7 +151,7 @@
 	<!-- 注册Mapper方式二：也可不指定特定mapper，而使用自动扫描包的方式来注册各种Mapper ，配置如下：-->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- <property name="annotationClass" value="org.springframework.stereotype.Repository"/>  -->
-		<property name="basePackage" value="edu.gduf.liu.mapper" />
+		<property name="basePackage" value="com.kevin.mapper" />
 		<!-- <property name="basePackage"><value>${mapper.package}</value></property> -->
 		<!-- <property name="sqlSessionFactory" ref="sqlSessionFactory"/> -->
 	</bean>

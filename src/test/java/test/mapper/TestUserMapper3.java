@@ -8,9 +8,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.mybatis.spring.SqlSessionTemplate;
 
-import edu.gduf.liu.dao.UserDao;
-import edu.gduf.liu.entity.User;
-import edu.gduf.liu.mapper.UserMapper;
+import com.kevin.dao.UserDao;
+import com.kevin.entity.User;
+import com.kevin.mapper.UserMapper;
+
 import test.base.TestBase;
 
 public class TestUserMapper3 extends TestBase {

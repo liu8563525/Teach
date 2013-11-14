@@ -14,7 +14,7 @@
 
 	<mvc:annotation-driven /><!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射 -->
 	<!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
-	<context:component-scan base-package="edu.gduf.liu" > <!-- use-default-filters="false" -->
+	<context:component-scan base-package="com.kevin" > <!-- use-default-filters="false" -->
 		<!-- <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
 		<!-- <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/> -->
 		<context:exclude-filter type="regex" expression="edu.gduf.liu.mapper.*"/>
@@ -23,14 +23,18 @@
 	<!-- <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
 	<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter" /> -->
 	<!-- 用于持有ApplicationContext,可以使用SpringContextHolder.getBean('xxxx')的静态方法得到spring bean对象 -->
-	<bean class="edu.gduf.liu.utils.SpringContextHolder" lazy-init="false" />
+	<bean class="com.kevin.utils.SpringContextHolder" lazy-init="false" />
 
 	<mvc:interceptors>
 		<mvc:interceptor>
 		 	 <mvc:mapping path="/*/*" /><!-- 全局interceptor -->
 		 	 <!--/user/* /paging/* -->
     		 <!-- <bean class="edu.gduf.liu.interceptor.ControllerInterceptor" /> -->
-    		<bean class="edu.gduf.liu.interceptor.StopWatchHandlerInterceptor"/>
+    		<bean class="com.kevin.interceptor.StopWatchHandlerInterceptor"/>
+    	</mvc:interceptor>
+    	<mvc:interceptor>
+		 	 <mvc:mapping path="/login/*" />
+    		 <bean class="com.kevin.interceptor.LoginAnnotationInterceptor"></bean>
     	</mvc:interceptor>
 	</mvc:interceptors>
 	<!-- 对静态资源文件的访问  方案一 （二选一） --><!-- <mvc:default-servlet-handler /> -->
@@ -114,7 +118,7 @@
             <property name="defaultContentType" value="text/html" />
         </bean>
 
-	<bean name="/hc" class="edu.gduf.liu.controller.HelloController" />
+	<bean name="/hc" class="com.kevin.controller.HelloController" />
 
 	<!-- 全局异常配置 start -->
 	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
@@ -122,7 +126,7 @@
 			<props>
 			<prop key="java.sql.SQLException">errors/showDBError</prop>
 			<!-- <prop key="java.lang.RuntimeException">errors/showError</prop> -->
-			<!-- <prop key="edu.gduf.liu.exception.SpringException">
+			<!-- <prop key="com.kevin.exception.SpringException">
             errors/showError
          	</prop> -->
 			</props>

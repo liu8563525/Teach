@@ -2,7 +2,8 @@ package test.dao;
 
 import org.junit.Test;
 
-import edu.gduf.liu.dao.CntUserDao;
+import com.kevin.dao.CntUserDao;
+
 import test.base.TestBase;
 
 public class TestCntUserDao extends TestBase {

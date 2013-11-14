@@ -11,10 +11,10 @@
     <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-	<!-- <listener>
+	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<context-param>
+	<!-- <context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/cfg/spring-*.xml</param-value>
 	</context-param> -->

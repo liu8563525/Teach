@@ -2,7 +2,8 @@ package test.mapper;
 
 import org.junit.Test;
 
-import edu.gduf.liu.mapper.CntUserMapper;
+import com.kevin.mapper.CntUserMapper;
+
 import test.base.TestBase;
 
 public class TestCntUserMapper2 extends TestBase {

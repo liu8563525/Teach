@@ -5,8 +5,9 @@ import java.util.List;
 
 import org.junit.Test;
 
-import edu.gduf.liu.dao.UserDao;
-import edu.gduf.liu.entity.User;
+import com.kevin.dao.UserDao;
+import com.kevin.entity.User;
+
 import test.base.TestBase;
 
 public class TestUserDao extends TestBase {

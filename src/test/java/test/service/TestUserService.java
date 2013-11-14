@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import edu.gduf.liu.service.UserService;
+import com.kevin.service.UserService;
 
 
 public class TestUserService {

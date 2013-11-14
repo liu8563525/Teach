@@ -29,7 +29,7 @@
 		<property name="hibernate.connection.autocommit">true</property>
 		<!-- <property name="hibernate.show_sql">true</property> -->
 
-		<mapping resource="edu/gduf/liu/entity/User.hbm.xml" />
+		<mapping resource="com/kevin/entity/User.hbm.xml" />
 
 	</session-factory>
 

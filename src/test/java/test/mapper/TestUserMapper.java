@@ -4,8 +4,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import edu.gduf.liu.entity.User;
-import edu.gduf.liu.mapper.UserMapper;
+import com.kevin.entity.User;
+import com.kevin.mapper.UserMapper;
 
 public class TestUserMapper {
 

@@ -10,8 +10,8 @@
 <body>
 <h1>ณ๖ดํมหSQLError</h1>
 <%
-/* Exception e = (Exception)request.getAttribute("exception");
-out.print(e.getMessage()); */
+Exception e = (Exception)request.getAttribute("exception");
+out.print(e); 
 %>
 </body>
 </html>

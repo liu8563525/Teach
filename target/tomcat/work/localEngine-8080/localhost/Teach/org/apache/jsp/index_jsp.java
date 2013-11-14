@@ -50,29 +50,30 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
+      out.write('\r');
       out.write('\n');
 
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
-      out.write("<html>\n");
-      out.write("<head>\n");
-      out.write("\t<script type=\"text/javascript\" src=\"js/jquery-1.10.2.min.js\"></script>\n");
-      out.write("</head>\n");
-      out.write("<body>\n");
-      out.write("<h2>Teach Hello World!</h2>\n");
-      out.write("\t<a href=\"freeMarker/hello\">say hello</a><br/>\n");
-      out.write("\t<a href=\"freeMarker/hello2\">say hello2</a><br/>\n");
-      out.write("\t<a href=\"freeMarker/hi\">say hi</a><br/>\n");
-      out.write("\t<a href=\"freeMarker/jsp\">jspRequest</a><br>\n");
-      out.write("\t<a href=\"paging/\">freemarker前台分页</a><br>\n");
-      out.write("\t<a href=\"myPage/1\">userPage</a>\n");
-      out.write("\t<a href=\"cntUserPage/1\">cntUserPage</a>\n");
-      out.write("</body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
+      out.write("<html>\r\n");
+      out.write("<head>\r\n");
+      out.write("\t<script type=\"text/javascript\" src=\"js/jquery-1.10.2.min.js\"></script>\r\n");
+      out.write("</head>\r\n");
+      out.write("<body>\r\n");
+      out.write("<h2>Teach Hello World!</h2>\r\n");
+      out.write("\t<a href=\"freeMarker/hello\">say hello</a><br/>\r\n");
+      out.write("\t<a href=\"freeMarker/hello2\">say hello2</a><br/>\r\n");
+      out.write("\t<a href=\"freeMarker/hi\">say hi</a><br/>\r\n");
+      out.write("\t<a href=\"freeMarker/jsp\">jspRequest</a><br>\r\n");
+      out.write("\t<a href=\"paging/\">freemarker前台分页</a><br>\r\n");
+      out.write("\t<a href=\"myPage/1\">userPage</a>\r\n");
+      out.write("\t<a href=\"cntUserPage/1\">cntUserPage</a>\r\n");
+      out.write("</body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

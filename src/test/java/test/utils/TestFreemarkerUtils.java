@@ -3,7 +3,7 @@ package test.utils;
 import java.util.HashMap;
 import java.util.Map;
 
-import edu.gduf.liu.utils.FreeMarkerUtils;
+import com.kevin.utils.FreeMarkerUtils;
 
 public class TestFreemarkerUtils {
 

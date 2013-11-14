@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.Transactional;
 /*import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;*/
 
-import edu.gduf.liu.mapper.UserMapper;
+
+import com.kevin.mapper.UserMapper;
 
 /*@RunWith(value = SpringJUnit4ClassRunner.class)*/
 @Configuration("src/main/webapp/WEB-INF/spring-servlet.xml")

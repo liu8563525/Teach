@@ -12,8 +12,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import edu.gduf.liu.entity.CntUser;
-import edu.gduf.liu.mapper.CntUserMapper;
+import com.kevin.entity.CntUser;
+import com.kevin.mapper.CntUserMapper;
 
 public class TestCntUserMapper {
 
