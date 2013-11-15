@@ -36,6 +36,11 @@ public class UserServiceImpl implements UserService {
     public int countAll() {
         return userDao.countAll();
     }
+    public User getUser(User user) {
+    	List<User> userList=userMapper.getUser(user);
+    	if (userList.size()<1) return null;
+		return userList.get(0);
+	}
     public List<User> getUsers(Page page){
     	return userMapper.getUsers(page);
     }

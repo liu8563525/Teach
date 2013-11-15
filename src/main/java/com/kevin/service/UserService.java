@@ -9,6 +9,7 @@ import com.kevin.utils.HandlerResult;
 
 public interface UserService {
 	public int countAll();
+	User getUser(User user);
 	public List<User> getUsers(Page page);
 
 	public int countCntAll();

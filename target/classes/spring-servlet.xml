@@ -44,7 +44,7 @@
 	<!-- 对静态资源文件的访问  方案一 （二选一） --><!-- <mvc:default-servlet-handler /> -->
 	 <!-- 对静态资源文件的访问  方案二 （二选一）-->
 	 <mvc:resources mapping="/js/**"  location="/js/"/><!--放过/js下的静态文件 -->
-     <mvc:resources mapping="/styles/**"  location="/css/"/>
+     <mvc:resources mapping="/css/**"  location="/css/"/>
      <mvc:resources mapping="/images/**"  location="/images/"/>
      <!-- <mvc:resources mapping="/favicon.ico" location="/favicon.ico/" /> -->
 

@@ -1,4 +1,4 @@
-package com.kevin.utils;
+package com.kevin.common;
 
 import java.nio.charset.Charset;
 
