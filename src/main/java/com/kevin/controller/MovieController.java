@@ -24,7 +24,7 @@ public class MovieController {
 		return "list";
 
 	}
-	
+
 	@RequestMapping(value = "/myname2", method = RequestMethod.POST)
 	public String getMovie2(String name, ModelMap model) {
 		userService.countAll();

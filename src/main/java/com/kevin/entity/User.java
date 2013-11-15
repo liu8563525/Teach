@@ -7,7 +7,13 @@ public class User implements Serializable{
 	private String name;
 	private String password;
 	private String type;
-	
+
+	/**
+	 * 权限字段
+	 * 每一位表示一种权限
+	 */
+	private String rightContent="0101000000";
+
 	public User(int id, String name, String password, String type) {
 		super();
 		this.id = id;
@@ -15,9 +21,9 @@ public class User implements Serializable{
 		this.password = password;
 		this.type = type;
 	}
-	
+
 	public User(){
-		
+
 	}
 
 	public int getId() {
@@ -43,7 +49,7 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public String getType(){
 		return this.type;
 	}
@@ -54,6 +60,14 @@ public class User implements Serializable{
 	@Override
 	public String toString() {
 		return "id:"+id+",name:"+name+",password:"+password+",type:"+type;
+	}
+
+	public String getRightContent() {
+		return rightContent;
+	}
+
+	public void setRightContent(String rightContent) {
+		this.rightContent = rightContent;
 	}
 
 }

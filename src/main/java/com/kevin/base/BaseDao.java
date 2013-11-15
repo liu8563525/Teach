@@ -8,7 +8,6 @@ import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.orm.hibernate3.HibernateTemplate;
 
 public abstract class BaseDao {
 	protected static Logger logger;
@@ -20,7 +19,7 @@ public abstract class BaseDao {
 	public BaseDao() {
 		logger = Logger.getLogger(getClass().getName());
 	}
-	
+
 	@SuppressWarnings("rawtypes")
 	@Deprecated
 	public Serializable getBeanByBean(Serializable bean) {

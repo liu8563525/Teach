@@ -1,7 +1,6 @@
 package com.kevin.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kevin.page.Page;
-import com.kevin.page.PageContext;
 import com.kevin.service.UserService;
-import com.kevin.utils.HandlerResult;
 
 @Controller
 @RequestMapping("/cntUserPage")

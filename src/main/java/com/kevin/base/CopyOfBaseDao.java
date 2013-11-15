@@ -1,7 +1,6 @@
 package com.kevin.base;
 
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -11,7 +10,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;*/
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 public abstract class CopyOfBaseDao {
@@ -25,8 +23,9 @@ public abstract class CopyOfBaseDao {
 		logger = Logger.getLogger(getClass().getName());
 	}
 
+	@SuppressWarnings("unchecked")
 	public Serializable getBeanByBean(Serializable bean) {
-		List list = hibernateTemplate.findByExample(bean);
+		List<Serializable> list = hibernateTemplate.findByExample(bean);
 		/*try {
 			beanResult = (Serializable) list.get(0);
 		} catch (Exception e) {
@@ -42,6 +41,7 @@ public abstract class CopyOfBaseDao {
 		return (Serializable) list.get(0);
 	}
 
+	@SuppressWarnings("rawtypes")
 	public List getBeansByBean(Serializable bean) {
 		return hibernateTemplate.findByExample(bean);
 	}

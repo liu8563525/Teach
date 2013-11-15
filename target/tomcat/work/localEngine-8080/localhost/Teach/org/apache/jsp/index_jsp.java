@@ -71,7 +71,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t<a href=\"freeMarker/jsp\">jspRequest</a><br>\r\n");
       out.write("\t<a href=\"paging/\">freemarker前台分页</a><br>\r\n");
       out.write("\t<a href=\"myPage/1\">userPage</a>\r\n");
-      out.write("\t<a href=\"cntUserPage/1\">cntUserPage</a>\r\n");
+      out.write("\t<a href=\"cntUserPage/1\">cntUserPage</a><br>\r\n");
+      out.write("\t<a href=\"login/\">登录</a>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

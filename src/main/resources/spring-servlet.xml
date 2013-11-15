@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 	http://www.springframework.org/schema/aop
@@ -10,14 +10,18 @@
 	http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/mvc
-    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
 	<mvc:annotation-driven /><!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射 -->
+    <context:annotation-config/>
+
 	<!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
 	<context:component-scan base-package="com.kevin" > <!-- use-default-filters="false" -->
 		<!-- <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
 		<!-- <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/> -->
-		<context:exclude-filter type="regex" expression="edu.gduf.liu.mapper.*"/>
+		<context:exclude-filter type="regex" expression="com.kevin.mapper.*"/>
 	</context:component-scan>
 	<!-- 表示所有实现了org.springframework.web.servlet.mvc.Controller接口的Bean可以作为Spring Web MVC中的处理器。如果需要其他类型的处理器可以通过实现HadlerAdapter来解决。 -->
 	<!-- <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
@@ -39,9 +43,9 @@
 	</mvc:interceptors>
 	<!-- 对静态资源文件的访问  方案一 （二选一） --><!-- <mvc:default-servlet-handler /> -->
 	 <!-- 对静态资源文件的访问  方案二 （二选一）-->
-	 <mvc:resources mapping="/js/**"  location="/WEB-INF/js/"/><!--放过/js下的静态文件 -->
-     <mvc:resources mapping="/styles/**"  location="/WEB-INF/css/"/>
-     <mvc:resources mapping="/images/**"  location="/WEB-INF/images/"/>
+	 <mvc:resources mapping="/js/**"  location="/js/"/><!--放过/js下的静态文件 -->
+     <mvc:resources mapping="/styles/**"  location="/css/"/>
+     <mvc:resources mapping="/images/**"  location="/images/"/>
      <!-- <mvc:resources mapping="/favicon.ico" location="/favicon.ico/" /> -->
 
 	<!-- 国际化支持 -->
@@ -53,7 +57,7 @@
 
     <!-- 配置freeMarker的模板路径 -->
 	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-	    <property name="templateLoaderPath" value="/WEB-INF/ftl/"/>
+	    <property name="templateLoaderPath" value="/ftl/"/><!-- /WEB-INF/ftl/ -->
 	    <!--property name="freemarkerSettings" ref="freemarkerConfiguration"/-->
 		<property name="freemarkerSettings">
 			<props>
@@ -106,8 +110,13 @@
                         <property name="exposeRequestAttributes" value="true" />
                         <property name="exposeSessionAttributes" value="true" />
                     </bean>
-                    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-						p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+                    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+						<!-- p:prefix="/jsp/" p:suffix=".jsp" > -->
+						<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+						<property name="prefix" value="/jsp/"/>
+	  					<property name="suffix" value=".jsp"/>
+						<property name="contentType" value="text/html; charset=utf-8"/>
+					</bean>
 					<!-- <bean>
 					    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
 					    <property name="prefix" value="/WEB-INF/jsp/"/>
@@ -115,7 +124,12 @@
 					</bean> -->
                 </list>
             </property>
-            <property name="defaultContentType" value="text/html" />
+            <!-- <property name="defaultContentType" value="text/html" />
+            <property name="defaultViews">
+            <list>
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+            </list>
+        	</property> -->
         </bean>
 
 	<bean name="/hc" class="com.kevin.controller.HelloController" />
@@ -124,6 +138,7 @@
 	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
 			<props>
+			<prop key="java.lang.Throwable">errors/404</prop>
 			<prop key="java.sql.SQLException">errors/showDBError</prop>
 			<!-- <prop key="java.lang.RuntimeException">errors/showError</prop> -->
 			<!-- <prop key="com.kevin.exception.SpringException">

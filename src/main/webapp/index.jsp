@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<a href="freeMarker/jsp">jspRequest</a><br>
 	<a href="paging/">freemarker前台分页</a><br>
 	<a href="myPage/1">userPage</a>
-	<a href="cntUserPage/1">cntUserPage</a>
+	<a href="cntUserPage/1">cntUserPage</a><br>
+	<a href="login/">登录</a>
 </body>
 </html>
