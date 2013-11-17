@@ -3,10 +3,9 @@ package com.kevin.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 import com.kevin.common.HttpConstants;
+import com.kevin.controller.util.SessionHelper;
 import com.kevin.entity.User;
 import com.kevin.service.UserService;
 
@@ -49,19 +49,21 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "/login.spr", method = RequestMethod.POST, produces = HttpConstants.UTF8_JSON_CONTENTTYPE)
 	@ResponseBody
-	public String login(@ModelAttribute("user") User user, HttpServletRequest request) throws Exception {
+	public String login(@ModelAttribute("user") User user, HttpSession session) throws Exception {
 		User tempUser=userService.getUser(user);
-		JSONObject json = new JSONObject();
-		if(tempUser==null){
-			json.accumulate("result", "fail");
-		}else{
-			json.accumulate("result", "success");
-		}
+		//JSONObject json = new JSONObject();
 		Map<String, String> map=new HashMap<String, String>();
-		map.put("result", "fail");
+		if(tempUser==null){
+			map.put("result", "fail");
+			//json.accumulate("result", "fail");
+			logger.info("用户:"+user+"登录失败!");
+		}else{
+			map.put("result", "success");
+			//json.accumulate("result", "success");
+			session.setAttribute(SessionHelper.UserHandler, user);
+			logger.info("用户:"+user+"登录成功!");
+		}
 		String userString=JSON.toJSONString(map);
-		json.accumulate("opmsg", "登录成功了!");
-		logger.info("登录成功!");
 		return userString;
 	}
 
