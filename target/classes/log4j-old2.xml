@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+   <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+   <log4j:configuration xmlns:log4j=’http://jakarta.apache.org/log4j/’>
+
+     <!–Socket–>
+   <appender name="Socket.DEBUG" class="org.apache.log4j.XMLSocketAppender">
+       <param name="RemoteHost" value="127.0.0.1"/>
+      <param name="Port" value="4445" />
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="\033[31;40m %d{yyy-MM-dd HH:mm:ss} [%-5p] %c {%F:%L} – %m%n" />
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="DEBUG" />
+     <param name="LevelMax" value="DEBUG" />
+   </filter>
+   </appender>
+
+
+   <appender name="Socket.INFO" class="org.apache.log4j.XMLSocketAppender">
+       <param name="RemoteHost" value="127.0.0.1"/>
+      <param name="Port" value="4445" />
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="\033[31;40m %d{yyy-MM-dd HH:mm:ss} [%-5p] %c {%F:%L} – %m%n" />
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="INFO" />
+     <param name="LevelMax" value="INFO" />
+   </filter>
+   </appender>
+
+   <appender name="Socket.WARN" class="org.apache.log4j.XMLSocketAppender">
+       <param name="RemoteHost" value="127.0.0.1"/>
+      <param name="Port" value="4445" />
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="\033[31;40m %d{yyy-MM-dd HH:mm:ss} [%-5p] %c {%F:%L} – %m%n" />
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="WARN" />
+     <param name="LevelMax" value="WARN" />
+   </filter>
+   </appender>
+
+   <appender name="Socket.ERROR" class="org.apache.log4j.XMLSocketAppender">
+       <param name="RemoteHost" value="127.0.0.1"/>
+      <param name="Port" value="4445" />
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%d{yyy-MM-dd HH:mm:ss} [%-5p] %c {%F:%L} – %m%n" />
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="ERROR" />
+     <param name="LevelMax" value="ERROR" />
+   </filter>
+   </appender>
+
+
+   <appender name="Socket.FATAL" class="org.apache.log4j.XMLSocketAppender">
+       <param name="RemoteHost" value="127.0.0.1"/>
+      <param name="Port" value="4445" />
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%d{yyy-MM-dd HH:mm:ss} [%-5p] %c {%F:%L} – %m%n" />
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="FATAL" />
+     <param name="LevelMax" value="FATAL" />
+   </filter>
+   </appender>
+   <!–Console–>
+     <appender name="Console.LOG.DEBUG" class="org.apache.log4j.ConsoleAppender">
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="\033[31;40m %d{yyy-MM-dd HH:mm:ss} [%-5p] %c {%F:%L} – %m%n" />
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="DEBUG" />
+     <param name="LevelMax" value="DEBUG" />
+   </filter>
+   </appender>
+
+   <appender name="Console.LOG.INFO" class="org.apache.log4j.ConsoleAppender">
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="\033[31;40m %d{yyy-MM-dd HH:mm:ss} [%-5p] %c {%F:%L} – %m%n" />
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="INFO" />
+     <param name="LevelMax" value="INFO" />
+   </filter>
+   </appender>
+
+   <appender name="Console.LOG.WARN" class="org.apache.log4j.ConsoleAppender">
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="\033[31;40m %d{yyy-MM-dd HH:mm:ss} [%-5p] %c {%F:%L} – %m%n" />
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="WARN" />
+     <param name="LevelMax" value="WARN" />
+   </filter>
+   </appender>
+
+   <appender name="Console.LOG.ERROR" class="org.apache.log4j.ConsoleAppender">
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%d{yyy-MM-dd HH:mm:ss} [%-5p] %c {%F:%L} – %m%n" />
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="ERROR" />
+     <param name="LevelMax" value="ERROR" />
+   </filter>
+   </appender>
+
+   <appender name="Console.LOG.FATAL" class="org.apache.log4j.ConsoleAppender">
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="\\033[41mFATAL\\033[0m %d{yyy-MM-dd HH:mm:ss} [%-5p] %c {%F:%L} – %m%n" />
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter">
+     <param name="LevelMin" value="FATAL" />
+     <param name="LevelMax" value="FATAL" />
+   </filter>
+   </appender>
+
+   <!–
+   <appender name="InitAction" class="org.apache.log4j.DailyRollingFileAppender">
+   <param name="File" value="d:/dbcon.log"/>
+   <param name="MaxFileSize" value="5120KB"/>
+   <param name="MaxFileSize" value="10" />
+   <param name="MaxBackupIndex" value="2" />
+   <param name="DatePattern" value="’.'yyyy-MM-dd’.'log"/>
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%d{yyy-MM-dd HH:mm:ss} – %m%n"/>
+     <param name="ConversionPattern" value="%d{DATE} [%-5p] %c {%F:%L} – %m%n"/>
+   </layout>
+   </appender>
+   –>
+
+<!–设置org.logicalcobwebs包的输出级别为INFO–>
+<!–
+<category name="org.logicalcobwebs">
+<priority value="INFO" />
+<appender-ref ref="LOG.Console" />
+</category>
+–>
+<root>
+     <priority value="DEBUG"/>
+     <appender-ref ref="Socket.DEBUG" />
+     <appender-ref ref="Socket.INFO" />
+     <appender-ref ref="Socket.WARN" />
+     <appender-ref ref="Socket.ERROR" />
+     <appender-ref ref="Socket.FATAL" />
+     <appender-ref ref="Console.LOG.DEBUG" />
+     <appender-ref ref="Console.LOG.INFO" />
+     <appender-ref ref="Console.LOG.WARN" />
+     <appender-ref ref="Console.LOG.ERROR" />
+     <appender-ref ref="Console.LOG.FATAL" />
+</root>
+
+<category name="main" >
+            <priority value ="trace" />
+    </category>
+
+</log4j:configuration>

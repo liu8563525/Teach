@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,7 +26,7 @@ import com.kevin.service.UserService;
 public class LoginController {
 
 	final Logger logger = Logger.getLogger(getClass());
-	
+
 	@Autowired
 	private UserService userService;
 
@@ -40,7 +41,7 @@ public class LoginController {
 	 */
 
 	/**
-	 * 
+	 *
 	 * @param user
 	 * @param validcode
 	 * @param session
@@ -49,7 +50,8 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "/login.spr", method = RequestMethod.POST, produces = HttpConstants.UTF8_JSON_CONTENTTYPE)
 	@ResponseBody
-	public String login(@ModelAttribute("user") User user, HttpSession session) throws Exception {
+	public String login(@ModelAttribute("user") User user, @RequestParam String name, HttpSession session) throws Exception {
+		logger.error("name:"+name);
 		User tempUser=userService.getUser(user);
 		//JSONObject json = new JSONObject();
 		Map<String, String> map=new HashMap<String, String>();
