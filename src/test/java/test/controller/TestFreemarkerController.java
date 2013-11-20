@@ -5,9 +5,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 
 import org.junit.Test;
 
-import test.base.TestBase;
+import test.base.BaseTest;
 
-public class TestFreemarkerController extends TestBase {
+public class TestFreemarkerController extends BaseTest {
 	
 	@Test
 	public void movie() throws Exception {

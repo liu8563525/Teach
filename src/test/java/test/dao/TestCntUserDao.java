@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import com.kevin.dao.CntUserDao;
 
-import test.base.TestBase;
+import test.base.BaseTest;
 
-public class TestCntUserDao extends TestBase {
+public class TestCntUserDao extends BaseTest {
 	@Test
 	public void testCountAll() {
 		CntUserDao cntUserDao = (CntUserDao)wac.getBean(CntUserDao.class);

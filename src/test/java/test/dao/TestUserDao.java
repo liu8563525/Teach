@@ -8,9 +8,9 @@ import org.junit.Test;
 import com.kevin.dao.UserDao;
 import com.kevin.entity.User;
 
-import test.base.TestBase;
+import test.base.BaseTest;
 
-public class TestUserDao extends TestBase {
+public class TestUserDao extends BaseTest {
 	@Test
 	public void testCountAll() {
 		UserDao userDao = (UserDao) wac.getBean(UserDao.class);

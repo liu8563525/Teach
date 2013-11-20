@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import com.kevin.mapper.CntUserMapper;
 
-import test.base.TestBase;
+import test.base.BaseTest;
 
-public class TestCntUserMapper2 extends TestBase {
+public class TestCntUserMapper2 extends BaseTest {
 
 	@Test
 	public void testCountAll() {
