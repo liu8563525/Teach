@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+
 import com.kevin.aop.Order;
 import com.kevin.dao.UserDao;
 import com.kevin.entity.User;
@@ -35,9 +36,9 @@ public class TestUserMapper3 extends BaseTest {
 		UserMapper userMapper = (UserMapper) wac.getBean(UserMapper.class);
 		/* UserMapper userMapper = (UserMapper)aContext.getBean("userMapper"); */
 		/* System.out.println(userMapper.getUser("admin")); */
-		long beginTime = System.currentTimeMillis();// 1、开始时间
+		long beginTime = System.currentTimeMillis();// 1、开始时�?
 		System.out.println(userMapper.countAll());
-		long endTime = System.currentTimeMillis();// 2、结束时间
+		long endTime = System.currentTimeMillis();// 2、结束时�?
 		long consumeTime = endTime - beginTime;// 3、消耗的时间
 		System.out.println(String.format("%s consume %d millis",
 				request.getRequestURI(), consumeTime));
@@ -53,9 +54,9 @@ public class TestUserMapper3 extends BaseTest {
 		int n = 1;
 		long consumeTime = 0;
 		for (int i = 0; i < n; i++) {
-			long beginTime = System.currentTimeMillis();// 1、开始时间
+			long beginTime = System.currentTimeMillis();// 1、开始时�?
 			System.out.println(userMapper.getUsers2().size());
-			long endTime = System.currentTimeMillis();// 2、结束时间
+			long endTime = System.currentTimeMillis();// 2、结束时�?
 			long consumeTimeTemp = (endTime - beginTime);// 3、消耗的时间
 			consumeTime = consumeTime + consumeTimeTemp;
 			//Thread.sleep(1000);
@@ -73,13 +74,13 @@ public class TestUserMapper3 extends BaseTest {
 		int n = 1;
 		long consumeTime = 0;
 		for (int i = 0; i < n; i++) {
-			long beginTime = System.currentTimeMillis();// 1、开始时间
+			long beginTime = System.currentTimeMillis();// 1、开始时�?
 			User user = new User();
 			user.setName("www");
 			user.setPassword("123456");
 			user.setType("tea");
 			userMapper.insertUser(user);
-			long endTime = System.currentTimeMillis();// 2、结束时间
+			long endTime = System.currentTimeMillis();// 2、结束时�?
 			long consumeTimeTemp = (endTime - beginTime);// 3、消耗的时间
 			consumeTime = consumeTime + consumeTimeTemp;
 			//Thread.sleep(1000);
@@ -108,7 +109,7 @@ public class TestUserMapper3 extends BaseTest {
 			userList.add(user);
 		}
 		long consumeTime = 0;
-		long beginTime = System.currentTimeMillis();// 1、开始时间
+		long beginTime = System.currentTimeMillis();// 1、开始时�?
 		userMapper.insertBatch(userList);
 		/*final List<User> userListTemp= userList;
 		sqlMapClientTemplate.execute(new SqlMapClientCallback() {
@@ -121,7 +122,7 @@ public class TestUserMapper3 extends BaseTest {
 	                   if (i % 100 == 0) {
 	                       // executeBatch会将inBatch置为false
 	                       executor.executeBatch();
-	                       // 需要再启动一次
+	                       // �?��再启动一�?
 	                       executor.startBatch();
 	                   }
 	                   i++;
@@ -131,7 +132,7 @@ public class TestUserMapper3 extends BaseTest {
 	           }
 	       });*/
 		//System.out.println(sqlSessionTemplate.getExecutorType());
-		long endTime = System.currentTimeMillis();// 2、结束时间
+		long endTime = System.currentTimeMillis();// 2、结束时�?
 		long consumeTimeTemp = (endTime - beginTime);// 3、消耗的时间
 		consumeTime = consumeTime + consumeTimeTemp;
 		System.out.println(String.format("%s consume %d millis",
@@ -142,14 +143,14 @@ public class TestUserMapper3 extends BaseTest {
 	/*public void testInsertBatchByTrue() {
 		//SqlSessionTemplate sqlSessionTemplate = wac.getBean(SqlSessionTemplate.class);
 		// 新获取一个模式为BATCH，自动提交为false的session
-		// 如果自动提交设置为true,将无法控制提交的条数，改为最后统一提交，可能导致内存溢出
+		// 如果自动提交设置为true,将无法控制提交的条数，改为最后统�?��交，可能导致内存溢出
 		//SqlSession session = sqlSessionTemplate.getSqlSessionFactory()
 				.openSession(ExecutorType.BATCH, false);
 		// 通过新的session获取mapper
 		//UserMapper userMapper = session.getMapper(UserMapper.class);
 		int size = 1000;
 		long consumeTime = 0;
-		long beginTime = System.currentTimeMillis();// 1、开始时间
+		long beginTime = System.currentTimeMillis();// 1、开始时�?
 		try {
 			for (int i = 0; i < size; i++) {
 				User user = new User();
@@ -158,17 +159,17 @@ public class TestUserMapper3 extends BaseTest {
 				user.setType("tea");
 				userMapper.insertUser(user);
 				if (i % 100 == 0 || i == size - 1) {
-					long endTime = System.currentTimeMillis();// 2、结束时间
+					long endTime = System.currentTimeMillis();// 2、结束时�?
 					long consumeTimeTemp = (endTime - beginTime);// 3、消耗的时间
 					consumeTime = consumeTime + consumeTimeTemp;
-					// 手动每1000个一提交，提交后无法回滚
+					// 手动�?000个一提交，提交后无法回滚
 					session.commit();
-					// 清理缓存，防止溢出
+					// 清理缓存，防止溢�?
 					session.clearCache();
 				}
 			}
 		} catch (Exception e) {
-			// 没有提交的数据可以回滚
+			// 没有提交的数据可以回�?
 			session.rollback();
 		} finally {
 			session.close();

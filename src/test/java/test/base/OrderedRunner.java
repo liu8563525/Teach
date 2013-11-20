@@ -11,7 +11,7 @@ import com.kevin.aop.Order;
 
 public class OrderedRunner extends SpringJUnit4ClassRunner {
 
-	// 定义一个静态变量，确保 computeTestMethods() 中的排序逻辑只运行一次（JUnit 会调用两次）
+	// 定义�?��静�?变量，确�?computeTestMethods() 中的排序逻辑只运行一次（JUnit 会调用两次）
 	private static List<FrameworkMethod> testMethodList;
 
 	public OrderedRunner(Class<?> cls) throws InitializationError {
@@ -21,7 +21,7 @@ public class OrderedRunner extends SpringJUnit4ClassRunner {
 	@Override
 	protected List<FrameworkMethod> computeTestMethods() {
 		if (testMethodList == null) {
-			// 获取带有 @Test 注解的方法
+			// 获取带有 @Test 注解的方�?
 			testMethodList = super.computeTestMethods();
 			// 获取测试方法上的 @Order 注解，并对所有的测试方法重新排序
 			Collections.sort(testMethodList, new Comparator<FrameworkMethod>() {
