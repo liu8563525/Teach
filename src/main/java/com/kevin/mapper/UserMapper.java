@@ -36,6 +36,6 @@ public interface UserMapper {
 	public List<User> getUsers(Page page);
 	public List<User> getUsers2();
 
-	@Select("SELECT count(*) FROM cnt_user")
+	@Select("SELECT count(*) FROM user")
 	public int countAll();
 }

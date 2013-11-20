@@ -3,21 +3,35 @@ package test.mapper;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.ibatis.session.ExecutorType;
-import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
-import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.core.annotation.Order;
 
 import com.kevin.dao.UserDao;
 import com.kevin.entity.User;
 import com.kevin.mapper.UserMapper;
 
-import test.base.TestBase;
+import test.base.BaseTest;
 
-public class TestUserMapper3 extends TestBase {
+public class TestUserMapper3 extends BaseTest {
+	private Logger logger = Logger.getLogger(getClass());
+
+	@BeforeClass
+	@AfterClass
+	public static void init() {
+		///initSQL("sql/product.sql");
+	}
 
 	@Test
+	@Order(3)
 	public void testCountAll() {
+		boolean result=true;
+		Assert.assertTrue(result);
+		logger.error("testCountAll--oreder(3)");
 		UserMapper userMapper = (UserMapper) wac.getBean(UserMapper.class);
 		/* UserMapper userMapper = (UserMapper)aContext.getBean("userMapper"); */
 		/* System.out.println(userMapper.getUser("admin")); */
@@ -30,11 +44,13 @@ public class TestUserMapper3 extends TestBase {
 	}
 
 	@Test
+	@Order(1)
 	public void testGetUsers2() throws InterruptedException {
+		logger.error("testGetUsers2--oreder(1)");
 		UserMapper userMapper = (UserMapper) wac.getBean(UserMapper.class);
 		/* UserMapper userMapper = (UserMapper)aContext.getBean("userMapper"); */
 		/* System.out.println(userMapper.getUser("admin")); */
-		int n = 10;
+		int n = 1;
 		long consumeTime = 0;
 		for (int i = 0; i < n; i++) {
 			long beginTime = System.currentTimeMillis();// 1、开始时间
@@ -48,10 +64,13 @@ public class TestUserMapper3 extends TestBase {
 				request.getRequestURI(), consumeTime / n));
 	}
 
+	//@Ignore
 	@Test
+	@Order(2)
 	public void testInsertUser() throws InterruptedException {
+		logger.error("testInsertUser--oreder(2)");
 		UserMapper userMapper = (UserMapper) wac.getBean(UserMapper.class);
-		int n = 100;
+		int n = 1;
 		long consumeTime = 0;
 		for (int i = 0; i < n; i++) {
 			long beginTime = System.currentTimeMillis();// 1、开始时间
@@ -69,8 +88,9 @@ public class TestUserMapper3 extends TestBase {
 				request.getRequestURI(), consumeTime / n));
 	}
 
-	@Test
+	//@Test
 	public void testInsertBatch() throws InterruptedException {
+		logger.error("testInsertUser--oreder(4)");
 		UserMapper userMapper = (UserMapper) wac.getBean(UserMapper.class);
 		UserDao userDao = (UserDao) wac.getBean(UserDao.class);
 		//SqlSessionTemplate sqlSessionTemplate = wac.getBean(SqlSessionTemplate.class);
