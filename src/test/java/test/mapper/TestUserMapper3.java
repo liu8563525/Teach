@@ -9,8 +9,8 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.springframework.core.annotation.Order;
 
+import com.kevin.aop.Order;
 import com.kevin.dao.UserDao;
 import com.kevin.entity.User;
 import com.kevin.mapper.UserMapper;

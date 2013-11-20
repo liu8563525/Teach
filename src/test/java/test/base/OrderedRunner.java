@@ -5,8 +5,9 @@ import java.util.Comparator;
 import java.util.List;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
-import org.springframework.core.annotation.Order;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.kevin.aop.Order;
 
 public class OrderedRunner extends SpringJUnit4ClassRunner {
 
