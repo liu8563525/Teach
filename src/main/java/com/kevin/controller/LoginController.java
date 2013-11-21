@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.alibaba.fastjson.JSON;
 import com.kevin.common.HttpConstants;
 import com.kevin.controller.util.SessionHelper;
 import com.kevin.entity.User;
 import com.kevin.service.UserService;
+import com.kevin.utils.JSONUtil;
 
 @Controller
 @RequestMapping(value = "/login")
@@ -67,7 +67,7 @@ public class LoginController {
 			logger.info("用户:"+user+"登录成功!");
 		}
 		//String userString=JSON.toJSONString(map);
-		String userString=JSONUtils.toJSONString(map);
+		String userString=JSONUtil.toJSONString(map);
 		logger.error(userString);
 		return userString;
 	}

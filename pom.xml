@@ -115,7 +115,7 @@
 		<dependency>
 		<groupId>com.alibaba</groupId>
 		<artifactId>druid</artifactId>
-		<version>0.2.26</version>
+		<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
@@ -144,9 +144,9 @@
 		<!-- <dependency>
 		  <groupId>com.fasterxml.jackson.core</groupId><artifactId>jackson-databind</artifactId> <version>2.2.3</version>
 		</dependency> -->
-		<dependency>
+		<!-- <dependency>
 		  <groupId>jstl</groupId><artifactId>jstl</artifactId><version>1.2</version>
-		</dependency>
+		</dependency> -->
 		<!-- <dependency>
 		  <groupId>org.codehaus.jackson</groupId><artifactId>jackson-core-asl</artifactId><version>1.9.13</version>
 		</dependency>

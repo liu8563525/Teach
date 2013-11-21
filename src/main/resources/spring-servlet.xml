@@ -100,7 +100,7 @@
                     <bean id="viewResolver"
                         class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
                         <property name="cache" value="true" />
-                        <property name="order" value="2"/>
+                        <property name="order" value="1"/>
                         <property name="prefix" value="" />
                         <!-- <property name="viewNames" value="*.ftl"/> --><!-- 与 suffix=.ftl重复了-->
                         <property name="suffix" value=".ftl" />
@@ -112,7 +112,8 @@
                     </bean>
                     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 						<!-- p:prefix="/jsp/" p:suffix=".jsp" > -->
-						<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+						<!-- <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/> -->
+						<property name="order" value="2"/>
 						<property name="prefix" value="/jsp/"/>
 	  					<property name="suffix" value=".jsp"/>
 						<property name="contentType" value="text/html; charset=utf-8"/>
