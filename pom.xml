@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<spring.version>3.2.5.RELEASE</spring.version>
+		<spring.version>3.2.6.RELEASE</spring.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -69,12 +69,12 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.2.2</version>
+			<version>3.2.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
-			<version>1.2.0</version>
+			<version>1.2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.freemarker</groupId>
@@ -115,7 +115,7 @@
 		<dependency>
 		<groupId>com.alibaba</groupId>
 		<artifactId>druid</artifactId>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
@@ -181,7 +181,7 @@
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat6-maven-plugin</artifactId>
-				<version>2.1</version>
+				<version>2.2</version>
 				<configuration>
 					<server>tomcat</server>
 					<url>http://localhost:8080/manager/html</url>
@@ -191,7 +191,7 @@
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.1</version>
+				<version>2.2</version>
 				<configuration>
 					<server>tomcat</server>
 					<url>http://localhost:8080/manager/html</url>

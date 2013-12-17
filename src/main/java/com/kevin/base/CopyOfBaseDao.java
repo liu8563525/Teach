@@ -23,9 +23,8 @@ public abstract class CopyOfBaseDao {
 		logger = Logger.getLogger(getClass().getName());
 	}
 
-	@SuppressWarnings("unchecked")
 	public Serializable getBeanByBean(Serializable bean) {
-		List<Serializable> list = hibernateTemplate.findByExample(bean);
+		List<Object> list = hibernateTemplate.findByExample(bean);
 		/*try {
 			beanResult = (Serializable) list.get(0);
 		} catch (Exception e) {
