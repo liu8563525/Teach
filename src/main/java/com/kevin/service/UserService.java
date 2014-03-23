@@ -2,6 +2,8 @@ package com.kevin.service;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.Cacheable;
+
 import com.kevin.entity.CntUser;
 import com.kevin.entity.User;
 import com.kevin.page.Page;

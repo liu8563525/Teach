@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.kevin.dao.UserDao;
@@ -41,6 +42,7 @@ public class UserServiceImpl implements UserService {
     	if (userList.size()<1) return null;
 		return userList.get(0);
 	}
+	@Cacheable(value="mobileCache",key="#page")
     public List<User> getUsers(Page page){
     	return userMapper.getUsers(page);
     }

@@ -26,6 +26,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<a href="myPage/1">userPage</a>
 	<a href="cntUserPage/1">cntUserPage</a><br>
 	<a href="login/">登录</a>
+	<%java.util.Date date=new java.util.Date();%>
+	现在是：<%=date%>  
 <DIV id=div1>
   <form id="loginForm" name="loginForm" action="login/login.spr" method="post" >
   <TABLE id=login height="100%" cellSpacing=0 cellPadding=0 width=800 

@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.core.NamedThreadLocal;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.kevin.utils.SpringContextHolder;
@@ -39,6 +40,7 @@ public class StopWatchHandlerInterceptor extends HandlerInterceptorAdapter {
 		logger.info("StopWatchHandlerInterceptor.preHandle()-----");
 		System.out.println("注入request" + request);
 		System.out.println("注入" + request.getSession().getId());
+		HandlerMethod handler2 = (HandlerMethod) handler;
 		return true;// 继续流程
 	}
 
