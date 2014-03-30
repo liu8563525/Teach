@@ -40,7 +40,6 @@ public class StopWatchHandlerInterceptor extends HandlerInterceptorAdapter {
 		logger.info("StopWatchHandlerInterceptor.preHandle()-----");
 		System.out.println("注入request" + request);
 		System.out.println("注入" + request.getSession().getId());
-		HandlerMethod handler2 = (HandlerMethod) handler;
 		return true;// 继续流程
 	}
 
